@@ -1,0 +1,2601 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module thinkstats2</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>thinkstats2</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/swalters/Classes/datascience/ThinkStats2/code/thinkstats2.py">/home/swalters/Classes/datascience/ThinkStats2/code/thinkstats2.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;file&nbsp;contains&nbsp;code&nbsp;for&nbsp;use&nbsp;with&nbsp;"Think&nbsp;Stats"&nbsp;and<br>
+"Think&nbsp;Bayes",&nbsp;both&nbsp;by&nbsp;Allen&nbsp;B.&nbsp;Downey,&nbsp;available&nbsp;from&nbsp;greenteapress.com<br>
+&nbsp;<br>
+Copyright&nbsp;2014&nbsp;Allen&nbsp;B.&nbsp;Downey<br>
+License:&nbsp;GNU&nbsp;GPLv3&nbsp;<a href="http://www.gnu.org/licenses/gpl.html">http://www.gnu.org/licenses/gpl.html</a></tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="bisect.html">bisect</a><br>
+<a href="copy.html">copy</a><br>
+<a href="logging.html">logging</a><br>
+<a href="math.html">math</a><br>
+</td><td width="25%" valign=top><a href="scipy.ndimage.html">scipy.ndimage</a><br>
+<a href="numpy.html">numpy</a><br>
+<a href="pandas.html">pandas</a><br>
+<a href="random.html">random</a><br>
+</td><td width="25%" valign=top><a href="re.html">re</a><br>
+<a href="scipy.html">scipy</a><br>
+<a href="scipy.special.html">scipy.special</a><br>
+<a href="scipy.stats.html">scipy.stats</a><br>
+</td><td width="25%" valign=top><a href="thinkplot.html">thinkplot</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="thinkstats2.html#Beta">Beta</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkstats2.html#Cdf">Cdf</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkstats2.html#Dirichlet">Dirichlet</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkstats2.html#FixedWidthVariables">FixedWidthVariables</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkstats2.html#HypothesisTest">HypothesisTest</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkstats2.html#Interpolator">Interpolator</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkstats2.html#Pdf">Pdf</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="thinkstats2.html#EstimatedPdf">EstimatedPdf</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkstats2.html#ExponentialPdf">ExponentialPdf</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkstats2.html#NormalPdf">NormalPdf</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="exceptions.html#Exception">exceptions.Exception</a>(<a href="exceptions.html#BaseException">exceptions.BaseException</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="thinkstats2.html#UnimplementedMethodException">UnimplementedMethodException</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="thinkstats2.html#_DictWrapper">_DictWrapper</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="thinkstats2.html#Hist">Hist</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkstats2.html#Pmf">Pmf</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="thinkstats2.html#Joint">Joint</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkstats2.html#Suite">Suite</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Beta">class <strong>Beta</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;<a href="#Beta">Beta</a>&nbsp;distribution.<br>
+&nbsp;<br>
+See&nbsp;<a href="http://en.wikipedia.org/wiki/Beta_distribution">http://en.wikipedia.org/wiki/Beta_distribution</a><br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Beta-EvalPdf"><strong>EvalPdf</strong></a>(self, x)</dt><dd><tt>Evaluates&nbsp;the&nbsp;PDF&nbsp;at&nbsp;x.</tt></dd></dl>
+
+<dl><dt><a name="Beta-MakeCdf"><strong>MakeCdf</strong></a>(self, steps<font color="#909090">=101</font>)</dt><dd><tt>Returns&nbsp;the&nbsp;CDF&nbsp;of&nbsp;this&nbsp;distribution.</tt></dd></dl>
+
+<dl><dt><a name="Beta-MakePmf"><strong>MakePmf</strong></a>(self, steps<font color="#909090">=101</font>, label<font color="#909090">=None</font>)</dt><dd><tt>Returns&nbsp;a&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;this&nbsp;distribution.<br>
+&nbsp;<br>
+Note:&nbsp;Normally,&nbsp;we&nbsp;just&nbsp;evaluate&nbsp;the&nbsp;PDF&nbsp;at&nbsp;a&nbsp;sequence<br>
+of&nbsp;points&nbsp;and&nbsp;treat&nbsp;the&nbsp;probability&nbsp;density&nbsp;as&nbsp;a&nbsp;probability<br>
+mass.<br>
+&nbsp;<br>
+But&nbsp;if&nbsp;alpha&nbsp;or&nbsp;beta&nbsp;is&nbsp;less&nbsp;than&nbsp;one,&nbsp;we&nbsp;have&nbsp;to&nbsp;be<br>
+more&nbsp;careful&nbsp;because&nbsp;the&nbsp;PDF&nbsp;goes&nbsp;to&nbsp;infinity&nbsp;at&nbsp;x=0<br>
+and&nbsp;x=1.&nbsp;&nbsp;In&nbsp;that&nbsp;case&nbsp;we&nbsp;evaluate&nbsp;the&nbsp;CDF&nbsp;and&nbsp;compute<br>
+differences.</tt></dd></dl>
+
+<dl><dt><a name="Beta-Mean"><strong>Mean</strong></a>(self)</dt><dd><tt>Computes&nbsp;the&nbsp;mean&nbsp;of&nbsp;this&nbsp;distribution.</tt></dd></dl>
+
+<dl><dt><a name="Beta-Random"><strong>Random</strong></a>(self)</dt><dd><tt>Generates&nbsp;a&nbsp;random&nbsp;variate&nbsp;from&nbsp;this&nbsp;distribution.</tt></dd></dl>
+
+<dl><dt><a name="Beta-Sample"><strong>Sample</strong></a>(self, n)</dt><dd><tt>Generates&nbsp;a&nbsp;random&nbsp;sample&nbsp;from&nbsp;this&nbsp;distribution.<br>
+&nbsp;<br>
+n:&nbsp;int&nbsp;sample&nbsp;size</tt></dd></dl>
+
+<dl><dt><a name="Beta-Update"><strong>Update</strong></a>(self, data)</dt><dd><tt>Updates&nbsp;a&nbsp;<a href="#Beta">Beta</a>&nbsp;distribution.<br>
+&nbsp;<br>
+data:&nbsp;pair&nbsp;of&nbsp;int&nbsp;(heads,&nbsp;tails)</tt></dd></dl>
+
+<dl><dt><a name="Beta-__init__"><strong>__init__</strong></a>(self, alpha<font color="#909090">=1</font>, beta<font color="#909090">=1</font>, label<font color="#909090">=None</font>)</dt><dd><tt>Initializes&nbsp;a&nbsp;<a href="#Beta">Beta</a>&nbsp;distribution.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Cdf">class <strong>Cdf</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;cumulative&nbsp;distribution&nbsp;function.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;xs:&nbsp;sequence&nbsp;of&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ps:&nbsp;sequence&nbsp;of&nbsp;probabilities<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label:&nbsp;string&nbsp;used&nbsp;as&nbsp;a&nbsp;graph&nbsp;label.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Cdf-ConfidenceInterval"><strong>ConfidenceInterval</strong></a> = <a href="#Cdf-CredibleInterval">CredibleInterval</a>(self, percentage<font color="#909090">=90</font>)</dt></dl>
+
+<dl><dt><a name="Cdf-Copy"><strong>Copy</strong></a>(self, label<font color="#909090">=None</font>)</dt><dd><tt>Returns&nbsp;a&nbsp;copy&nbsp;of&nbsp;this&nbsp;<a href="#Cdf">Cdf</a>.<br>
+&nbsp;<br>
+label:&nbsp;string&nbsp;label&nbsp;for&nbsp;the&nbsp;new&nbsp;<a href="#Cdf">Cdf</a></tt></dd></dl>
+
+<dl><dt><a name="Cdf-CredibleInterval"><strong>CredibleInterval</strong></a>(self, percentage<font color="#909090">=90</font>)</dt><dd><tt>Computes&nbsp;the&nbsp;central&nbsp;credible&nbsp;interval.<br>
+&nbsp;<br>
+If&nbsp;percentage=90,&nbsp;computes&nbsp;the&nbsp;90%&nbsp;CI.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;percentage:&nbsp;float&nbsp;between&nbsp;0&nbsp;and&nbsp;100<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sequence&nbsp;of&nbsp;two&nbsp;floats,&nbsp;low&nbsp;and&nbsp;high</tt></dd></dl>
+
+<dl><dt><a name="Cdf-Items"><strong>Items</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;sorted&nbsp;sequence&nbsp;of&nbsp;(value,&nbsp;probability)&nbsp;pairs.<br>
+&nbsp;<br>
+Note:&nbsp;in&nbsp;Python3,&nbsp;returns&nbsp;an&nbsp;iterator.</tt></dd></dl>
+
+<dl><dt><a name="Cdf-MakePmf"><strong>MakePmf</strong></a>(self, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Pmf">Pmf</a>.</tt></dd></dl>
+
+<dl><dt><a name="Cdf-Max"><strong>Max</strong></a>(self, k)</dt><dd><tt>Computes&nbsp;the&nbsp;CDF&nbsp;of&nbsp;the&nbsp;maximum&nbsp;of&nbsp;k&nbsp;selections&nbsp;from&nbsp;this&nbsp;dist.<br>
+&nbsp;<br>
+k:&nbsp;int<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Cdf">Cdf</a></tt></dd></dl>
+
+<dl><dt><a name="Cdf-Mean"><strong>Mean</strong></a>(self)</dt><dd><tt>Computes&nbsp;the&nbsp;mean&nbsp;of&nbsp;a&nbsp;CDF.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;mean</tt></dd></dl>
+
+<dl><dt><a name="Cdf-Percentile"><strong>Percentile</strong></a>(self, p)</dt><dd><tt>Returns&nbsp;the&nbsp;value&nbsp;that&nbsp;corresponds&nbsp;to&nbsp;percentile&nbsp;p.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;p:&nbsp;number&nbsp;in&nbsp;the&nbsp;range&nbsp;[0,&nbsp;100]<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="Cdf-PercentileRank"><strong>PercentileRank</strong></a>(self, x)</dt><dd><tt>Returns&nbsp;the&nbsp;percentile&nbsp;rank&nbsp;of&nbsp;the&nbsp;value&nbsp;x.<br>
+&nbsp;<br>
+x:&nbsp;potential&nbsp;value&nbsp;in&nbsp;the&nbsp;CDF<br>
+&nbsp;<br>
+returns:&nbsp;percentile&nbsp;rank&nbsp;in&nbsp;the&nbsp;range&nbsp;0&nbsp;to&nbsp;100</tt></dd></dl>
+
+<dl><dt><a name="Cdf-Prob"><strong>Prob</strong></a>(self, x)</dt><dd><tt>Returns&nbsp;CDF(x),&nbsp;the&nbsp;probability&nbsp;that&nbsp;corresponds&nbsp;to&nbsp;value&nbsp;x.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;number<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Cdf-ProbArray"><strong>ProbArray</strong></a> = <a href="#Cdf-Probs">Probs</a>(self, xs)</dt></dl>
+
+<dl><dt><a name="Cdf-Probs"><strong>Probs</strong></a>(self, xs)</dt><dd><tt>Gets&nbsp;probabilities&nbsp;for&nbsp;a&nbsp;sequence&nbsp;of&nbsp;values.<br>
+&nbsp;<br>
+xs:&nbsp;any&nbsp;sequence&nbsp;that&nbsp;can&nbsp;be&nbsp;converted&nbsp;to&nbsp;NumPy&nbsp;array<br>
+&nbsp;<br>
+returns:&nbsp;NumPy&nbsp;array&nbsp;of&nbsp;cumulative&nbsp;probabilities</tt></dd></dl>
+
+<dl><dt><a name="Cdf-Random"><strong>Random</strong></a>(self)</dt><dd><tt>Chooses&nbsp;a&nbsp;random&nbsp;value&nbsp;from&nbsp;this&nbsp;distribution.</tt></dd></dl>
+
+<dl><dt><a name="Cdf-Render"><strong>Render</strong></a>(self, **options)</dt><dd><tt>Generates&nbsp;a&nbsp;sequence&nbsp;of&nbsp;points&nbsp;suitable&nbsp;for&nbsp;plotting.<br>
+&nbsp;<br>
+An&nbsp;empirical&nbsp;CDF&nbsp;is&nbsp;a&nbsp;step&nbsp;function;&nbsp;linear&nbsp;interpolation<br>
+can&nbsp;be&nbsp;misleading.<br>
+&nbsp;<br>
+Note:&nbsp;options&nbsp;are&nbsp;ignored<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple&nbsp;of&nbsp;(xs,&nbsp;ps)</tt></dd></dl>
+
+<dl><dt><a name="Cdf-Sample"><strong>Sample</strong></a>(self, n)</dt><dd><tt>Generates&nbsp;a&nbsp;random&nbsp;sample&nbsp;from&nbsp;this&nbsp;distribution.<br>
+&nbsp;<br>
+n:&nbsp;int&nbsp;length&nbsp;of&nbsp;the&nbsp;sample<br>
+returns:&nbsp;NumPy&nbsp;array</tt></dd></dl>
+
+<dl><dt><a name="Cdf-Scale"><strong>Scale</strong></a>(self, factor)</dt><dd><tt>Multiplies&nbsp;the&nbsp;xs&nbsp;by&nbsp;a&nbsp;factor.<br>
+&nbsp;<br>
+factor:&nbsp;what&nbsp;to&nbsp;multiply&nbsp;by</tt></dd></dl>
+
+<dl><dt><a name="Cdf-Shift"><strong>Shift</strong></a>(self, term)</dt><dd><tt>Adds&nbsp;a&nbsp;term&nbsp;to&nbsp;the&nbsp;xs.<br>
+&nbsp;<br>
+term:&nbsp;how&nbsp;much&nbsp;to&nbsp;add</tt></dd></dl>
+
+<dl><dt><a name="Cdf-Value"><strong>Value</strong></a>(self, p)</dt><dd><tt>Returns&nbsp;InverseCDF(p),&nbsp;the&nbsp;value&nbsp;that&nbsp;corresponds&nbsp;to&nbsp;probability&nbsp;p.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;p:&nbsp;number&nbsp;in&nbsp;the&nbsp;range&nbsp;[0,&nbsp;1]<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="Cdf-ValueArray"><strong>ValueArray</strong></a>(self, ps)</dt><dd><tt>Returns&nbsp;InverseCDF(p),&nbsp;the&nbsp;value&nbsp;that&nbsp;corresponds&nbsp;to&nbsp;probability&nbsp;p.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ps:&nbsp;NumPy&nbsp;array&nbsp;of&nbsp;numbers&nbsp;in&nbsp;the&nbsp;range&nbsp;[0,&nbsp;1]<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NumPy&nbsp;array&nbsp;of&nbsp;values</tt></dd></dl>
+
+<dl><dt><a name="Cdf-Values"><strong>Values</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;sorted&nbsp;list&nbsp;of&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="Cdf-__delitem__"><strong>__delitem__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Cdf-__eq__"><strong>__eq__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="Cdf-__getitem__"><strong>__getitem__</strong></a>(self, x)</dt></dl>
+
+<dl><dt><a name="Cdf-__init__"><strong>__init__</strong></a>(self, obj<font color="#909090">=None</font>, ps<font color="#909090">=None</font>, label<font color="#909090">=None</font>)</dt><dd><tt>Initializes.<br>
+&nbsp;<br>
+If&nbsp;ps&nbsp;is&nbsp;provided,&nbsp;obj&nbsp;must&nbsp;be&nbsp;the&nbsp;corresponding&nbsp;list&nbsp;of&nbsp;values.<br>
+&nbsp;<br>
+obj:&nbsp;<a href="#Hist">Hist</a>,&nbsp;<a href="#Pmf">Pmf</a>,&nbsp;<a href="#Cdf">Cdf</a>,&nbsp;<a href="#Pdf">Pdf</a>,&nbsp;dict,&nbsp;pandas&nbsp;Series,&nbsp;list&nbsp;of&nbsp;pairs<br>
+ps:&nbsp;list&nbsp;of&nbsp;cumulative&nbsp;probabilities<br>
+label:&nbsp;string&nbsp;label</tt></dd></dl>
+
+<dl><dt><a name="Cdf-__len__"><strong>__len__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Cdf-__repr__"><strong>__repr__</strong></a> = <a href="#Cdf-__str__">__str__</a>(self)</dt></dl>
+
+<dl><dt><a name="Cdf-__setitem__"><strong>__setitem__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Cdf-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Dirichlet">class <strong>Dirichlet</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;<a href="#Dirichlet">Dirichlet</a>&nbsp;distribution.<br>
+&nbsp;<br>
+See&nbsp;<a href="http://en.wikipedia.org/wiki/Dirichlet_distribution">http://en.wikipedia.org/wiki/Dirichlet_distribution</a><br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Dirichlet-Likelihood"><strong>Likelihood</strong></a>(self, data)</dt><dd><tt>Computes&nbsp;the&nbsp;likelihood&nbsp;of&nbsp;the&nbsp;data.<br>
+&nbsp;<br>
+Selects&nbsp;a&nbsp;random&nbsp;vector&nbsp;of&nbsp;probabilities&nbsp;from&nbsp;this&nbsp;distribution.<br>
+&nbsp;<br>
+Returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Dirichlet-LogLikelihood"><strong>LogLikelihood</strong></a>(self, data)</dt><dd><tt>Computes&nbsp;the&nbsp;log&nbsp;likelihood&nbsp;of&nbsp;the&nbsp;data.<br>
+&nbsp;<br>
+Selects&nbsp;a&nbsp;random&nbsp;vector&nbsp;of&nbsp;probabilities&nbsp;from&nbsp;this&nbsp;distribution.<br>
+&nbsp;<br>
+Returns:&nbsp;float&nbsp;log&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Dirichlet-MarginalBeta"><strong>MarginalBeta</strong></a>(self, i)</dt><dd><tt>Computes&nbsp;the&nbsp;marginal&nbsp;distribution&nbsp;of&nbsp;the&nbsp;ith&nbsp;element.<br>
+&nbsp;<br>
+See&nbsp;<a href="http://en.wikipedia.org/wiki/Dirichlet_distribution">http://en.wikipedia.org/wiki/Dirichlet_distribution</a><br>
+#Marginal_distributions<br>
+&nbsp;<br>
+i:&nbsp;int<br>
+&nbsp;<br>
+Returns:&nbsp;<a href="#Beta">Beta</a>&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Dirichlet-PredictivePmf"><strong>PredictivePmf</strong></a>(self, xs, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;predictive&nbsp;distribution.<br>
+&nbsp;<br>
+xs:&nbsp;values&nbsp;to&nbsp;go&nbsp;into&nbsp;the&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+Returns:&nbsp;<a href="#Pmf">Pmf</a>&nbsp;that&nbsp;maps&nbsp;from&nbsp;x&nbsp;to&nbsp;the&nbsp;mean&nbsp;prevalence&nbsp;of&nbsp;x</tt></dd></dl>
+
+<dl><dt><a name="Dirichlet-Random"><strong>Random</strong></a>(self)</dt><dd><tt>Generates&nbsp;a&nbsp;random&nbsp;variate&nbsp;from&nbsp;this&nbsp;distribution.<br>
+&nbsp;<br>
+Returns:&nbsp;normalized&nbsp;vector&nbsp;of&nbsp;fractions</tt></dd></dl>
+
+<dl><dt><a name="Dirichlet-Update"><strong>Update</strong></a>(self, data)</dt><dd><tt>Updates&nbsp;a&nbsp;<a href="#Dirichlet">Dirichlet</a>&nbsp;distribution.<br>
+&nbsp;<br>
+data:&nbsp;sequence&nbsp;of&nbsp;observations,&nbsp;in&nbsp;order&nbsp;corresponding&nbsp;to&nbsp;params</tt></dd></dl>
+
+<dl><dt><a name="Dirichlet-__init__"><strong>__init__</strong></a>(self, n, conc<font color="#909090">=1</font>, label<font color="#909090">=None</font>)</dt><dd><tt>Initializes&nbsp;a&nbsp;<a href="#Dirichlet">Dirichlet</a>&nbsp;distribution.<br>
+&nbsp;<br>
+n:&nbsp;number&nbsp;of&nbsp;dimensions<br>
+conc:&nbsp;concentration&nbsp;parameter&nbsp;(smaller&nbsp;yields&nbsp;more&nbsp;concentration)<br>
+label:&nbsp;string&nbsp;label</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="EstimatedPdf">class <strong>EstimatedPdf</strong></a>(<a href="thinkstats2.html#Pdf">Pdf</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;PDF&nbsp;estimated&nbsp;by&nbsp;KDE.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkstats2.html#EstimatedPdf">EstimatedPdf</a></dd>
+<dd><a href="thinkstats2.html#Pdf">Pdf</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EstimatedPdf-Density"><strong>Density</strong></a>(self, xs)</dt><dd><tt>Evaluates&nbsp;this&nbsp;<a href="#Pdf">Pdf</a>&nbsp;at&nbsp;xs.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;or&nbsp;NumPy&nbsp;array&nbsp;of&nbsp;probability&nbsp;density</tt></dd></dl>
+
+<dl><dt><a name="EstimatedPdf-GetLinspace"><strong>GetLinspace</strong></a>(self)</dt><dd><tt>Get&nbsp;a&nbsp;linspace&nbsp;for&nbsp;plotting.<br>
+&nbsp;<br>
+Returns:&nbsp;numpy&nbsp;array</tt></dd></dl>
+
+<dl><dt><a name="EstimatedPdf-__init__"><strong>__init__</strong></a>(self, sample, label<font color="#909090">=None</font>)</dt><dd><tt>Estimates&nbsp;the&nbsp;density&nbsp;function&nbsp;based&nbsp;on&nbsp;a&nbsp;sample.<br>
+&nbsp;<br>
+sample:&nbsp;sequence&nbsp;of&nbsp;data<br>
+label:&nbsp;string</tt></dd></dl>
+
+<dl><dt><a name="EstimatedPdf-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="thinkstats2.html#Pdf">Pdf</a>:<br>
+<dl><dt><a name="EstimatedPdf-Items"><strong>Items</strong></a>(self)</dt><dd><tt>Generates&nbsp;a&nbsp;sequence&nbsp;of&nbsp;(value,&nbsp;probability)&nbsp;pairs.</tt></dd></dl>
+
+<dl><dt><a name="EstimatedPdf-MakePmf"><strong>MakePmf</strong></a>(self, **options)</dt><dd><tt>Makes&nbsp;a&nbsp;discrete&nbsp;version&nbsp;of&nbsp;this&nbsp;<a href="#Pdf">Pdf</a>.<br>
+&nbsp;<br>
+options&nbsp;can&nbsp;include<br>
+label:&nbsp;string<br>
+low:&nbsp;low&nbsp;end&nbsp;of&nbsp;range<br>
+high:&nbsp;high&nbsp;end&nbsp;of&nbsp;range<br>
+n:&nbsp;number&nbsp;of&nbsp;places&nbsp;to&nbsp;evaluate<br>
+&nbsp;<br>
+Returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="EstimatedPdf-Render"><strong>Render</strong></a>(self, **options)</dt><dd><tt>Generates&nbsp;a&nbsp;sequence&nbsp;of&nbsp;points&nbsp;suitable&nbsp;for&nbsp;plotting.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple&nbsp;of&nbsp;(xs,&nbsp;densities)</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkstats2.html#Pdf">Pdf</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ExponentialPdf">class <strong>ExponentialPdf</strong></a>(<a href="thinkstats2.html#Pdf">Pdf</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;the&nbsp;PDF&nbsp;of&nbsp;an&nbsp;exponential&nbsp;distribution.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkstats2.html#ExponentialPdf">ExponentialPdf</a></dd>
+<dd><a href="thinkstats2.html#Pdf">Pdf</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ExponentialPdf-Density"><strong>Density</strong></a>(self, xs)</dt><dd><tt>Evaluates&nbsp;this&nbsp;<a href="#Pdf">Pdf</a>&nbsp;at&nbsp;xs.<br>
+&nbsp;<br>
+xs:&nbsp;scalar&nbsp;or&nbsp;sequence&nbsp;of&nbsp;floats<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;or&nbsp;NumPy&nbsp;array&nbsp;of&nbsp;probability&nbsp;density</tt></dd></dl>
+
+<dl><dt><a name="ExponentialPdf-GetLinspace"><strong>GetLinspace</strong></a>(self)</dt><dd><tt>Get&nbsp;a&nbsp;linspace&nbsp;for&nbsp;plotting.<br>
+&nbsp;<br>
+Returns:&nbsp;numpy&nbsp;array</tt></dd></dl>
+
+<dl><dt><a name="ExponentialPdf-__init__"><strong>__init__</strong></a>(self, lam<font color="#909090">=1</font>, label<font color="#909090">=None</font>)</dt><dd><tt>Constructs&nbsp;an&nbsp;exponential&nbsp;<a href="#Pdf">Pdf</a>&nbsp;with&nbsp;given&nbsp;parameter.<br>
+&nbsp;<br>
+lam:&nbsp;rate&nbsp;parameter<br>
+label:&nbsp;string</tt></dd></dl>
+
+<dl><dt><a name="ExponentialPdf-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="thinkstats2.html#Pdf">Pdf</a>:<br>
+<dl><dt><a name="ExponentialPdf-Items"><strong>Items</strong></a>(self)</dt><dd><tt>Generates&nbsp;a&nbsp;sequence&nbsp;of&nbsp;(value,&nbsp;probability)&nbsp;pairs.</tt></dd></dl>
+
+<dl><dt><a name="ExponentialPdf-MakePmf"><strong>MakePmf</strong></a>(self, **options)</dt><dd><tt>Makes&nbsp;a&nbsp;discrete&nbsp;version&nbsp;of&nbsp;this&nbsp;<a href="#Pdf">Pdf</a>.<br>
+&nbsp;<br>
+options&nbsp;can&nbsp;include<br>
+label:&nbsp;string<br>
+low:&nbsp;low&nbsp;end&nbsp;of&nbsp;range<br>
+high:&nbsp;high&nbsp;end&nbsp;of&nbsp;range<br>
+n:&nbsp;number&nbsp;of&nbsp;places&nbsp;to&nbsp;evaluate<br>
+&nbsp;<br>
+Returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="ExponentialPdf-Render"><strong>Render</strong></a>(self, **options)</dt><dd><tt>Generates&nbsp;a&nbsp;sequence&nbsp;of&nbsp;points&nbsp;suitable&nbsp;for&nbsp;plotting.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple&nbsp;of&nbsp;(xs,&nbsp;densities)</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkstats2.html#Pdf">Pdf</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="FixedWidthVariables">class <strong>FixedWidthVariables</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;set&nbsp;of&nbsp;variables&nbsp;in&nbsp;a&nbsp;fixed&nbsp;width&nbsp;file.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="FixedWidthVariables-ReadFixedWidth"><strong>ReadFixedWidth</strong></a>(self, filename, **options)</dt><dd><tt>Reads&nbsp;a&nbsp;fixed&nbsp;width&nbsp;ASCII&nbsp;file.<br>
+&nbsp;<br>
+filename:&nbsp;string&nbsp;filename<br>
+&nbsp;<br>
+returns:&nbsp;DataFrame</tt></dd></dl>
+
+<dl><dt><a name="FixedWidthVariables-__init__"><strong>__init__</strong></a>(self, variables, index_base<font color="#909090">=0</font>)</dt><dd><tt>Initializes.<br>
+&nbsp;<br>
+variables:&nbsp;DataFrame<br>
+index_base:&nbsp;are&nbsp;the&nbsp;indices&nbsp;0&nbsp;or&nbsp;1&nbsp;based?<br>
+&nbsp;<br>
+Attributes:<br>
+colspecs:&nbsp;list&nbsp;of&nbsp;(start,&nbsp;end)&nbsp;index&nbsp;tuples<br>
+names:&nbsp;list&nbsp;of&nbsp;string&nbsp;variable&nbsp;names</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Hist">class <strong>Hist</strong></a>(<a href="thinkstats2.html#_DictWrapper">_DictWrapper</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;histogram,&nbsp;which&nbsp;is&nbsp;a&nbsp;map&nbsp;from&nbsp;values&nbsp;to&nbsp;frequencies.<br>
+&nbsp;<br>
+Values&nbsp;can&nbsp;be&nbsp;any&nbsp;hashable&nbsp;type;&nbsp;frequencies&nbsp;are&nbsp;integer&nbsp;counters.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkstats2.html#Hist">Hist</a></dd>
+<dd><a href="thinkstats2.html#_DictWrapper">_DictWrapper</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Hist-Freq"><strong>Freq</strong></a>(self, x)</dt><dd><tt>Gets&nbsp;the&nbsp;frequency&nbsp;associated&nbsp;with&nbsp;the&nbsp;value&nbsp;x.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;number&nbsp;value<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;frequency</tt></dd></dl>
+
+<dl><dt><a name="Hist-Freqs"><strong>Freqs</strong></a>(self, xs)</dt><dd><tt>Gets&nbsp;frequencies&nbsp;for&nbsp;a&nbsp;sequence&nbsp;of&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="Hist-IsSubset"><strong>IsSubset</strong></a>(self, other)</dt><dd><tt>Checks&nbsp;whether&nbsp;the&nbsp;values&nbsp;in&nbsp;this&nbsp;histogram&nbsp;are&nbsp;a&nbsp;subset&nbsp;of<br>
+the&nbsp;values&nbsp;in&nbsp;the&nbsp;given&nbsp;histogram.</tt></dd></dl>
+
+<dl><dt><a name="Hist-Subtract"><strong>Subtract</strong></a>(self, other)</dt><dd><tt>Subtracts&nbsp;the&nbsp;values&nbsp;in&nbsp;the&nbsp;given&nbsp;histogram&nbsp;from&nbsp;this&nbsp;histogram.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="thinkstats2.html#_DictWrapper">_DictWrapper</a>:<br>
+<dl><dt><a name="Hist-Copy"><strong>Copy</strong></a>(self, label<font color="#909090">=None</font>)</dt><dd><tt>Returns&nbsp;a&nbsp;copy.<br>
+&nbsp;<br>
+Make&nbsp;a&nbsp;shallow&nbsp;copy&nbsp;of&nbsp;d.&nbsp;&nbsp;If&nbsp;you&nbsp;want&nbsp;a&nbsp;deep&nbsp;copy&nbsp;of&nbsp;d,<br>
+use&nbsp;copy.deepcopy&nbsp;on&nbsp;the&nbsp;whole&nbsp;<a href="__builtin__.html#object">object</a>.<br>
+&nbsp;<br>
+label:&nbsp;string&nbsp;label&nbsp;for&nbsp;the&nbsp;new&nbsp;<a href="#Hist">Hist</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;_DictWrapper&nbsp;with&nbsp;the&nbsp;same&nbsp;type</tt></dd></dl>
+
+<dl><dt><a name="Hist-Exp"><strong>Exp</strong></a>(self, m<font color="#909090">=None</font>)</dt><dd><tt>Exponentiates&nbsp;the&nbsp;probabilities.<br>
+&nbsp;<br>
+m:&nbsp;how&nbsp;much&nbsp;to&nbsp;shift&nbsp;the&nbsp;ps&nbsp;before&nbsp;exponentiating<br>
+&nbsp;<br>
+If&nbsp;m&nbsp;is&nbsp;None,&nbsp;normalizes&nbsp;so&nbsp;that&nbsp;the&nbsp;largest&nbsp;prob&nbsp;is&nbsp;1.</tt></dd></dl>
+
+<dl><dt><a name="Hist-GetDict"><strong>GetDict</strong></a>(self)</dt><dd><tt>Gets&nbsp;the&nbsp;dictionary.</tt></dd></dl>
+
+<dl><dt><a name="Hist-Incr"><strong>Incr</strong></a>(self, x, term<font color="#909090">=1</font>)</dt><dd><tt>Increments&nbsp;the&nbsp;freq/prob&nbsp;associated&nbsp;with&nbsp;the&nbsp;value&nbsp;x.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;number&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;term:&nbsp;how&nbsp;much&nbsp;to&nbsp;increment&nbsp;by</tt></dd></dl>
+
+<dl><dt><a name="Hist-Items"><strong>Items</strong></a>(self)</dt><dd><tt>Gets&nbsp;an&nbsp;unsorted&nbsp;sequence&nbsp;of&nbsp;(value,&nbsp;freq/prob)&nbsp;pairs.</tt></dd></dl>
+
+<dl><dt><a name="Hist-Largest"><strong>Largest</strong></a>(self, n<font color="#909090">=10</font>)</dt><dd><tt>Returns&nbsp;the&nbsp;largest&nbsp;n&nbsp;values,&nbsp;with&nbsp;frequency/probability.<br>
+&nbsp;<br>
+n:&nbsp;number&nbsp;of&nbsp;items&nbsp;to&nbsp;return</tt></dd></dl>
+
+<dl><dt><a name="Hist-Log"><strong>Log</strong></a>(self, m<font color="#909090">=None</font>)</dt><dd><tt>Log&nbsp;transforms&nbsp;the&nbsp;probabilities.<br>
+&nbsp;<br>
+Removes&nbsp;values&nbsp;with&nbsp;probability&nbsp;0.<br>
+&nbsp;<br>
+Normalizes&nbsp;so&nbsp;that&nbsp;the&nbsp;largest&nbsp;logprob&nbsp;is&nbsp;0.</tt></dd></dl>
+
+<dl><dt><a name="Hist-MakeCdf"><strong>MakeCdf</strong></a>(self, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Cdf">Cdf</a>.</tt></dd></dl>
+
+<dl><dt><a name="Hist-MaxLike"><strong>MaxLike</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;largest&nbsp;frequency/probability&nbsp;in&nbsp;the&nbsp;map.</tt></dd></dl>
+
+<dl><dt><a name="Hist-Mult"><strong>Mult</strong></a>(self, x, factor)</dt><dd><tt>Scales&nbsp;the&nbsp;freq/prob&nbsp;associated&nbsp;with&nbsp;the&nbsp;value&nbsp;x.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;number&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;factor:&nbsp;how&nbsp;much&nbsp;to&nbsp;multiply&nbsp;by</tt></dd></dl>
+
+<dl><dt><a name="Hist-Print"><strong>Print</strong></a>(self)</dt><dd><tt>Prints&nbsp;the&nbsp;values&nbsp;and&nbsp;freqs/probs&nbsp;in&nbsp;ascending&nbsp;order.</tt></dd></dl>
+
+<dl><dt><a name="Hist-Remove"><strong>Remove</strong></a>(self, x)</dt><dd><tt>Removes&nbsp;a&nbsp;value.<br>
+&nbsp;<br>
+Throws&nbsp;an&nbsp;exception&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;there.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;value&nbsp;to&nbsp;remove</tt></dd></dl>
+
+<dl><dt><a name="Hist-Render"><strong>Render</strong></a>(self, **options)</dt><dd><tt>Generates&nbsp;a&nbsp;sequence&nbsp;of&nbsp;points&nbsp;suitable&nbsp;for&nbsp;plotting.<br>
+&nbsp;<br>
+Note:&nbsp;options&nbsp;are&nbsp;ignored<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple&nbsp;of&nbsp;(sorted&nbsp;value&nbsp;sequence,&nbsp;freq/prob&nbsp;sequence)</tt></dd></dl>
+
+<dl><dt><a name="Hist-Scale"><strong>Scale</strong></a>(self, factor)</dt><dd><tt>Multiplies&nbsp;the&nbsp;values&nbsp;by&nbsp;a&nbsp;factor.<br>
+&nbsp;<br>
+factor:&nbsp;what&nbsp;to&nbsp;multiply&nbsp;by<br>
+&nbsp;<br>
+Returns:&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Hist-Set"><strong>Set</strong></a>(self, x, y<font color="#909090">=0</font>)</dt><dd><tt>Sets&nbsp;the&nbsp;freq/prob&nbsp;associated&nbsp;with&nbsp;the&nbsp;value&nbsp;x.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;number&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y:&nbsp;number&nbsp;freq&nbsp;or&nbsp;prob</tt></dd></dl>
+
+<dl><dt><a name="Hist-SetDict"><strong>SetDict</strong></a>(self, d)</dt><dd><tt>Sets&nbsp;the&nbsp;dictionary.</tt></dd></dl>
+
+<dl><dt><a name="Hist-Smallest"><strong>Smallest</strong></a>(self, n<font color="#909090">=10</font>)</dt><dd><tt>Returns&nbsp;the&nbsp;smallest&nbsp;n&nbsp;values,&nbsp;with&nbsp;frequency/probability.<br>
+&nbsp;<br>
+n:&nbsp;number&nbsp;of&nbsp;items&nbsp;to&nbsp;return</tt></dd></dl>
+
+<dl><dt><a name="Hist-Total"><strong>Total</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;total&nbsp;of&nbsp;the&nbsp;frequencies/probabilities&nbsp;in&nbsp;the&nbsp;map.</tt></dd></dl>
+
+<dl><dt><a name="Hist-Values"><strong>Values</strong></a>(self)</dt><dd><tt>Gets&nbsp;an&nbsp;unsorted&nbsp;sequence&nbsp;of&nbsp;values.<br>
+&nbsp;<br>
+Note:&nbsp;one&nbsp;source&nbsp;of&nbsp;confusion&nbsp;is&nbsp;that&nbsp;the&nbsp;keys&nbsp;of&nbsp;this<br>
+dictionary&nbsp;are&nbsp;the&nbsp;values&nbsp;of&nbsp;the&nbsp;<a href="#Hist">Hist</a>/<a href="#Pmf">Pmf</a>,&nbsp;and&nbsp;the<br>
+values&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;are&nbsp;frequencies/probabilities.</tt></dd></dl>
+
+<dl><dt><a name="Hist-__contains__"><strong>__contains__</strong></a>(self, value)</dt></dl>
+
+<dl><dt><a name="Hist-__delitem__"><strong>__delitem__</strong></a>(self, value)</dt></dl>
+
+<dl><dt><a name="Hist-__eq__"><strong>__eq__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="Hist-__getitem__"><strong>__getitem__</strong></a>(self, value)</dt></dl>
+
+<dl><dt><a name="Hist-__hash__"><strong>__hash__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Hist-__init__"><strong>__init__</strong></a>(self, obj<font color="#909090">=None</font>, label<font color="#909090">=None</font>)</dt><dd><tt>Initializes&nbsp;the&nbsp;distribution.<br>
+&nbsp;<br>
+obj:&nbsp;<a href="#Hist">Hist</a>,&nbsp;<a href="#Pmf">Pmf</a>,&nbsp;<a href="#Cdf">Cdf</a>,&nbsp;<a href="#Pdf">Pdf</a>,&nbsp;dict,&nbsp;pandas&nbsp;Series,&nbsp;list&nbsp;of&nbsp;pairs<br>
+label:&nbsp;string&nbsp;label</tt></dd></dl>
+
+<dl><dt><a name="Hist-__iter__"><strong>__iter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Hist-__len__"><strong>__len__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Hist-__repr__"><strong>__repr__</strong></a> = __str__(self)</dt></dl>
+
+<dl><dt><a name="Hist-__setitem__"><strong>__setitem__</strong></a>(self, value, prob)</dt></dl>
+
+<dl><dt><a name="Hist-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Hist-iterkeys"><strong>iterkeys</strong></a>(self)</dt><dd><tt>Returns&nbsp;an&nbsp;iterator&nbsp;over&nbsp;keys.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkstats2.html#_DictWrapper">_DictWrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="HypothesisTest">class <strong>HypothesisTest</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;hypothesis&nbsp;test.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="HypothesisTest-MakeModel"><strong>MakeModel</strong></a>(self)</dt><dd><tt>Build&nbsp;a&nbsp;model&nbsp;of&nbsp;the&nbsp;null&nbsp;hypothesis.</tt></dd></dl>
+
+<dl><dt><a name="HypothesisTest-MaxTestStat"><strong>MaxTestStat</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;largest&nbsp;test&nbsp;statistic&nbsp;seen&nbsp;during&nbsp;simulations.</tt></dd></dl>
+
+<dl><dt><a name="HypothesisTest-PValue"><strong>PValue</strong></a>(self, iters<font color="#909090">=1000</font>)</dt><dd><tt>Computes&nbsp;the&nbsp;distribution&nbsp;of&nbsp;the&nbsp;test&nbsp;statistic&nbsp;and&nbsp;p-value.<br>
+&nbsp;<br>
+iters:&nbsp;number&nbsp;of&nbsp;iterations<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;p-value</tt></dd></dl>
+
+<dl><dt><a name="HypothesisTest-PlotCdf"><strong>PlotCdf</strong></a>(self, label<font color="#909090">=None</font>)</dt><dd><tt>Draws&nbsp;a&nbsp;<a href="#Cdf">Cdf</a>&nbsp;with&nbsp;vertical&nbsp;lines&nbsp;at&nbsp;the&nbsp;observed&nbsp;test&nbsp;stat.</tt></dd></dl>
+
+<dl><dt><a name="HypothesisTest-RunModel"><strong>RunModel</strong></a>(self)</dt><dd><tt>Run&nbsp;the&nbsp;model&nbsp;of&nbsp;the&nbsp;null&nbsp;hypothesis.<br>
+&nbsp;<br>
+returns:&nbsp;simulated&nbsp;data</tt></dd></dl>
+
+<dl><dt><a name="HypothesisTest-TestStatistic"><strong>TestStatistic</strong></a>(self, data)</dt><dd><tt>Computes&nbsp;the&nbsp;test&nbsp;statistic.<br>
+&nbsp;<br>
+data:&nbsp;data&nbsp;in&nbsp;whatever&nbsp;form&nbsp;is&nbsp;relevant</tt></dd></dl>
+
+<dl><dt><a name="HypothesisTest-__init__"><strong>__init__</strong></a>(self, data)</dt><dd><tt>Initializes.<br>
+&nbsp;<br>
+data:&nbsp;data&nbsp;in&nbsp;whatever&nbsp;form&nbsp;is&nbsp;relevant</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Interpolator">class <strong>Interpolator</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;mapping&nbsp;between&nbsp;sorted&nbsp;sequences;&nbsp;performs&nbsp;linear&nbsp;interp.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;xs:&nbsp;sorted&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ys:&nbsp;sorted&nbsp;list<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Interpolator-Lookup"><strong>Lookup</strong></a>(self, x)</dt><dd><tt>Looks&nbsp;up&nbsp;x&nbsp;and&nbsp;returns&nbsp;the&nbsp;corresponding&nbsp;value&nbsp;of&nbsp;y.</tt></dd></dl>
+
+<dl><dt><a name="Interpolator-Reverse"><strong>Reverse</strong></a>(self, y)</dt><dd><tt>Looks&nbsp;up&nbsp;y&nbsp;and&nbsp;returns&nbsp;the&nbsp;corresponding&nbsp;value&nbsp;of&nbsp;x.</tt></dd></dl>
+
+<dl><dt><a name="Interpolator-__init__"><strong>__init__</strong></a>(self, xs, ys)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Joint">class <strong>Joint</strong></a>(<a href="thinkstats2.html#Pmf">Pmf</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;joint&nbsp;distribution.<br>
+&nbsp;<br>
+The&nbsp;values&nbsp;are&nbsp;sequences&nbsp;(usually&nbsp;tuples)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkstats2.html#Joint">Joint</a></dd>
+<dd><a href="thinkstats2.html#Pmf">Pmf</a></dd>
+<dd><a href="thinkstats2.html#_DictWrapper">_DictWrapper</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Joint-Conditional"><strong>Conditional</strong></a>(self, i, j, val, label<font color="#909090">=None</font>)</dt><dd><tt>Gets&nbsp;the&nbsp;conditional&nbsp;distribution&nbsp;of&nbsp;the&nbsp;indicated&nbsp;variable.<br>
+&nbsp;<br>
+Distribution&nbsp;of&nbsp;vs[i],&nbsp;conditioned&nbsp;on&nbsp;vs[j]&nbsp;=&nbsp;val.<br>
+&nbsp;<br>
+i:&nbsp;index&nbsp;of&nbsp;the&nbsp;variable&nbsp;we&nbsp;want<br>
+j:&nbsp;which&nbsp;variable&nbsp;is&nbsp;conditioned&nbsp;on<br>
+val:&nbsp;the&nbsp;value&nbsp;the&nbsp;jth&nbsp;variable&nbsp;has&nbsp;to&nbsp;have<br>
+&nbsp;<br>
+Returns:&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Joint-Marginal"><strong>Marginal</strong></a>(self, i, label<font color="#909090">=None</font>)</dt><dd><tt>Gets&nbsp;the&nbsp;marginal&nbsp;distribution&nbsp;of&nbsp;the&nbsp;indicated&nbsp;variable.<br>
+&nbsp;<br>
+i:&nbsp;index&nbsp;of&nbsp;the&nbsp;variable&nbsp;we&nbsp;want<br>
+&nbsp;<br>
+Returns:&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Joint-MaxLikeInterval"><strong>MaxLikeInterval</strong></a>(self, percentage<font color="#909090">=90</font>)</dt><dd><tt>Returns&nbsp;the&nbsp;maximum-likelihood&nbsp;credible&nbsp;interval.<br>
+&nbsp;<br>
+If&nbsp;percentage=90,&nbsp;computes&nbsp;a&nbsp;90%&nbsp;CI&nbsp;containing&nbsp;the&nbsp;values<br>
+with&nbsp;the&nbsp;highest&nbsp;likelihoods.<br>
+&nbsp;<br>
+percentage:&nbsp;float&nbsp;between&nbsp;0&nbsp;and&nbsp;100<br>
+&nbsp;<br>
+Returns:&nbsp;list&nbsp;of&nbsp;values&nbsp;from&nbsp;the&nbsp;suite</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="thinkstats2.html#Pmf">Pmf</a>:<br>
+<dl><dt><a name="Joint-AddConstant"><strong>AddConstant</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;sum&nbsp;a&nbsp;constant&nbsp;and&nbsp;values&nbsp;from&nbsp;self.<br>
+&nbsp;<br>
+other:&nbsp;a&nbsp;number<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Joint-AddPmf"><strong>AddPmf</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;sum&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Joint-CredibleInterval"><strong>CredibleInterval</strong></a>(self, percentage<font color="#909090">=90</font>)</dt><dd><tt>Computes&nbsp;the&nbsp;central&nbsp;credible&nbsp;interval.<br>
+&nbsp;<br>
+If&nbsp;percentage=90,&nbsp;computes&nbsp;the&nbsp;90%&nbsp;CI.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;percentage:&nbsp;float&nbsp;between&nbsp;0&nbsp;and&nbsp;100<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sequence&nbsp;of&nbsp;two&nbsp;floats,&nbsp;low&nbsp;and&nbsp;high</tt></dd></dl>
+
+<dl><dt><a name="Joint-DivPmf"><strong>DivPmf</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;ratio&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Joint-Max"><strong>Max</strong></a>(self, k)</dt><dd><tt>Computes&nbsp;the&nbsp;CDF&nbsp;of&nbsp;the&nbsp;maximum&nbsp;of&nbsp;k&nbsp;selections&nbsp;from&nbsp;this&nbsp;dist.<br>
+&nbsp;<br>
+k:&nbsp;int<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Cdf">Cdf</a></tt></dd></dl>
+
+<dl><dt><a name="Joint-MaximumLikelihood"><strong>MaximumLikelihood</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;value&nbsp;with&nbsp;the&nbsp;highest&nbsp;probability.<br>
+&nbsp;<br>
+Returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Joint-Mean"><strong>Mean</strong></a>(self)</dt><dd><tt>Computes&nbsp;the&nbsp;mean&nbsp;of&nbsp;a&nbsp;PMF.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;mean</tt></dd></dl>
+
+<dl><dt><a name="Joint-MulConstant"><strong>MulConstant</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;product&nbsp;of&nbsp;a&nbsp;constant&nbsp;and&nbsp;values&nbsp;from&nbsp;self.<br>
+&nbsp;<br>
+other:&nbsp;a&nbsp;number<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Joint-MulPmf"><strong>MulPmf</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;diff&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Joint-Normalize"><strong>Normalize</strong></a>(self, fraction<font color="#909090">=1.0</font>)</dt><dd><tt>Normalizes&nbsp;this&nbsp;PMF&nbsp;so&nbsp;the&nbsp;sum&nbsp;of&nbsp;all&nbsp;probs&nbsp;is&nbsp;fraction.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fraction:&nbsp;what&nbsp;the&nbsp;total&nbsp;should&nbsp;be&nbsp;after&nbsp;normalization<br>
+&nbsp;<br>
+Returns:&nbsp;the&nbsp;total&nbsp;probability&nbsp;before&nbsp;normalizing</tt></dd></dl>
+
+<dl><dt><a name="Joint-Percentile"><strong>Percentile</strong></a>(self, percentage)</dt><dd><tt>Computes&nbsp;a&nbsp;percentile&nbsp;of&nbsp;a&nbsp;given&nbsp;<a href="#Pmf">Pmf</a>.<br>
+&nbsp;<br>
+Note:&nbsp;this&nbsp;is&nbsp;not&nbsp;super&nbsp;efficient.&nbsp;&nbsp;If&nbsp;you&nbsp;are&nbsp;planning<br>
+to&nbsp;compute&nbsp;more&nbsp;than&nbsp;a&nbsp;few&nbsp;percentiles,&nbsp;compute&nbsp;the&nbsp;<a href="#Cdf">Cdf</a>.<br>
+&nbsp;<br>
+percentage:&nbsp;float&nbsp;0-100<br>
+&nbsp;<br>
+returns:&nbsp;value&nbsp;from&nbsp;the&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Joint-Prob"><strong>Prob</strong></a>(self, x, default<font color="#909090">=0</font>)</dt><dd><tt>Gets&nbsp;the&nbsp;probability&nbsp;associated&nbsp;with&nbsp;the&nbsp;value&nbsp;x.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;number&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;default:&nbsp;value&nbsp;to&nbsp;return&nbsp;if&nbsp;the&nbsp;key&nbsp;is&nbsp;not&nbsp;there<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Joint-ProbGreater"><strong>ProbGreater</strong></a>(self, x)</dt><dd><tt>Probability&nbsp;that&nbsp;a&nbsp;sample&nbsp;from&nbsp;this&nbsp;<a href="#Pmf">Pmf</a>&nbsp;exceeds&nbsp;x.<br>
+&nbsp;<br>
+x:&nbsp;number<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Joint-ProbLess"><strong>ProbLess</strong></a>(self, x)</dt><dd><tt>Probability&nbsp;that&nbsp;a&nbsp;sample&nbsp;from&nbsp;this&nbsp;<a href="#Pmf">Pmf</a>&nbsp;is&nbsp;less&nbsp;than&nbsp;x.<br>
+&nbsp;<br>
+x:&nbsp;number<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Joint-Probs"><strong>Probs</strong></a>(self, xs)</dt><dd><tt>Gets&nbsp;probabilities&nbsp;for&nbsp;a&nbsp;sequence&nbsp;of&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="Joint-Random"><strong>Random</strong></a>(self)</dt><dd><tt>Chooses&nbsp;a&nbsp;random&nbsp;element&nbsp;from&nbsp;this&nbsp;PMF.<br>
+&nbsp;<br>
+Note:&nbsp;this&nbsp;is&nbsp;not&nbsp;very&nbsp;efficient.&nbsp;&nbsp;If&nbsp;you&nbsp;plan&nbsp;to&nbsp;call<br>
+this&nbsp;more&nbsp;than&nbsp;a&nbsp;few&nbsp;times,&nbsp;consider&nbsp;converting&nbsp;to&nbsp;a&nbsp;CDF.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;value&nbsp;from&nbsp;the&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Joint-Std"><strong>Std</strong></a>(self, mu<font color="#909090">=None</font>)</dt><dd><tt>Computes&nbsp;the&nbsp;standard&nbsp;deviation&nbsp;of&nbsp;a&nbsp;PMF.<br>
+&nbsp;<br>
+mu:&nbsp;the&nbsp;point&nbsp;around&nbsp;which&nbsp;the&nbsp;variance&nbsp;is&nbsp;computed;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;omitted,&nbsp;computes&nbsp;the&nbsp;mean<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;standard&nbsp;deviation</tt></dd></dl>
+
+<dl><dt><a name="Joint-SubPmf"><strong>SubPmf</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;diff&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Joint-Var"><strong>Var</strong></a>(self, mu<font color="#909090">=None</font>)</dt><dd><tt>Computes&nbsp;the&nbsp;variance&nbsp;of&nbsp;a&nbsp;PMF.<br>
+&nbsp;<br>
+mu:&nbsp;the&nbsp;point&nbsp;around&nbsp;which&nbsp;the&nbsp;variance&nbsp;is&nbsp;computed;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;omitted,&nbsp;computes&nbsp;the&nbsp;mean<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;variance</tt></dd></dl>
+
+<dl><dt><a name="Joint-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;sum&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a>&nbsp;or&nbsp;a&nbsp;scalar<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Joint-__div__"><strong>__div__</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;ratio&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Joint-__ge__"><strong>__ge__</strong></a>(self, obj)</dt><dd><tt>Greater&nbsp;than&nbsp;or&nbsp;equal.<br>
+&nbsp;<br>
+obj:&nbsp;number&nbsp;or&nbsp;_DictWrapper<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Joint-__gt__"><strong>__gt__</strong></a>(self, obj)</dt><dd><tt>Greater&nbsp;than.<br>
+&nbsp;<br>
+obj:&nbsp;number&nbsp;or&nbsp;_DictWrapper<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Joint-__le__"><strong>__le__</strong></a>(self, obj)</dt><dd><tt>Less&nbsp;than&nbsp;or&nbsp;equal.<br>
+&nbsp;<br>
+obj:&nbsp;number&nbsp;or&nbsp;_DictWrapper<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Joint-__lt__"><strong>__lt__</strong></a>(self, obj)</dt><dd><tt>Less&nbsp;than.<br>
+&nbsp;<br>
+obj:&nbsp;number&nbsp;or&nbsp;_DictWrapper<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Joint-__mul__"><strong>__mul__</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;product&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Joint-__sub__"><strong>__sub__</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;diff&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Joint-__truediv__"><strong>__truediv__</strong></a> = __div__(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;ratio&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="thinkstats2.html#_DictWrapper">_DictWrapper</a>:<br>
+<dl><dt><a name="Joint-Copy"><strong>Copy</strong></a>(self, label<font color="#909090">=None</font>)</dt><dd><tt>Returns&nbsp;a&nbsp;copy.<br>
+&nbsp;<br>
+Make&nbsp;a&nbsp;shallow&nbsp;copy&nbsp;of&nbsp;d.&nbsp;&nbsp;If&nbsp;you&nbsp;want&nbsp;a&nbsp;deep&nbsp;copy&nbsp;of&nbsp;d,<br>
+use&nbsp;copy.deepcopy&nbsp;on&nbsp;the&nbsp;whole&nbsp;<a href="__builtin__.html#object">object</a>.<br>
+&nbsp;<br>
+label:&nbsp;string&nbsp;label&nbsp;for&nbsp;the&nbsp;new&nbsp;<a href="#Hist">Hist</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;_DictWrapper&nbsp;with&nbsp;the&nbsp;same&nbsp;type</tt></dd></dl>
+
+<dl><dt><a name="Joint-Exp"><strong>Exp</strong></a>(self, m<font color="#909090">=None</font>)</dt><dd><tt>Exponentiates&nbsp;the&nbsp;probabilities.<br>
+&nbsp;<br>
+m:&nbsp;how&nbsp;much&nbsp;to&nbsp;shift&nbsp;the&nbsp;ps&nbsp;before&nbsp;exponentiating<br>
+&nbsp;<br>
+If&nbsp;m&nbsp;is&nbsp;None,&nbsp;normalizes&nbsp;so&nbsp;that&nbsp;the&nbsp;largest&nbsp;prob&nbsp;is&nbsp;1.</tt></dd></dl>
+
+<dl><dt><a name="Joint-GetDict"><strong>GetDict</strong></a>(self)</dt><dd><tt>Gets&nbsp;the&nbsp;dictionary.</tt></dd></dl>
+
+<dl><dt><a name="Joint-Incr"><strong>Incr</strong></a>(self, x, term<font color="#909090">=1</font>)</dt><dd><tt>Increments&nbsp;the&nbsp;freq/prob&nbsp;associated&nbsp;with&nbsp;the&nbsp;value&nbsp;x.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;number&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;term:&nbsp;how&nbsp;much&nbsp;to&nbsp;increment&nbsp;by</tt></dd></dl>
+
+<dl><dt><a name="Joint-Items"><strong>Items</strong></a>(self)</dt><dd><tt>Gets&nbsp;an&nbsp;unsorted&nbsp;sequence&nbsp;of&nbsp;(value,&nbsp;freq/prob)&nbsp;pairs.</tt></dd></dl>
+
+<dl><dt><a name="Joint-Largest"><strong>Largest</strong></a>(self, n<font color="#909090">=10</font>)</dt><dd><tt>Returns&nbsp;the&nbsp;largest&nbsp;n&nbsp;values,&nbsp;with&nbsp;frequency/probability.<br>
+&nbsp;<br>
+n:&nbsp;number&nbsp;of&nbsp;items&nbsp;to&nbsp;return</tt></dd></dl>
+
+<dl><dt><a name="Joint-Log"><strong>Log</strong></a>(self, m<font color="#909090">=None</font>)</dt><dd><tt>Log&nbsp;transforms&nbsp;the&nbsp;probabilities.<br>
+&nbsp;<br>
+Removes&nbsp;values&nbsp;with&nbsp;probability&nbsp;0.<br>
+&nbsp;<br>
+Normalizes&nbsp;so&nbsp;that&nbsp;the&nbsp;largest&nbsp;logprob&nbsp;is&nbsp;0.</tt></dd></dl>
+
+<dl><dt><a name="Joint-MakeCdf"><strong>MakeCdf</strong></a>(self, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Cdf">Cdf</a>.</tt></dd></dl>
+
+<dl><dt><a name="Joint-MaxLike"><strong>MaxLike</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;largest&nbsp;frequency/probability&nbsp;in&nbsp;the&nbsp;map.</tt></dd></dl>
+
+<dl><dt><a name="Joint-Mult"><strong>Mult</strong></a>(self, x, factor)</dt><dd><tt>Scales&nbsp;the&nbsp;freq/prob&nbsp;associated&nbsp;with&nbsp;the&nbsp;value&nbsp;x.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;number&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;factor:&nbsp;how&nbsp;much&nbsp;to&nbsp;multiply&nbsp;by</tt></dd></dl>
+
+<dl><dt><a name="Joint-Print"><strong>Print</strong></a>(self)</dt><dd><tt>Prints&nbsp;the&nbsp;values&nbsp;and&nbsp;freqs/probs&nbsp;in&nbsp;ascending&nbsp;order.</tt></dd></dl>
+
+<dl><dt><a name="Joint-Remove"><strong>Remove</strong></a>(self, x)</dt><dd><tt>Removes&nbsp;a&nbsp;value.<br>
+&nbsp;<br>
+Throws&nbsp;an&nbsp;exception&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;there.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;value&nbsp;to&nbsp;remove</tt></dd></dl>
+
+<dl><dt><a name="Joint-Render"><strong>Render</strong></a>(self, **options)</dt><dd><tt>Generates&nbsp;a&nbsp;sequence&nbsp;of&nbsp;points&nbsp;suitable&nbsp;for&nbsp;plotting.<br>
+&nbsp;<br>
+Note:&nbsp;options&nbsp;are&nbsp;ignored<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple&nbsp;of&nbsp;(sorted&nbsp;value&nbsp;sequence,&nbsp;freq/prob&nbsp;sequence)</tt></dd></dl>
+
+<dl><dt><a name="Joint-Scale"><strong>Scale</strong></a>(self, factor)</dt><dd><tt>Multiplies&nbsp;the&nbsp;values&nbsp;by&nbsp;a&nbsp;factor.<br>
+&nbsp;<br>
+factor:&nbsp;what&nbsp;to&nbsp;multiply&nbsp;by<br>
+&nbsp;<br>
+Returns:&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Joint-Set"><strong>Set</strong></a>(self, x, y<font color="#909090">=0</font>)</dt><dd><tt>Sets&nbsp;the&nbsp;freq/prob&nbsp;associated&nbsp;with&nbsp;the&nbsp;value&nbsp;x.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;number&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y:&nbsp;number&nbsp;freq&nbsp;or&nbsp;prob</tt></dd></dl>
+
+<dl><dt><a name="Joint-SetDict"><strong>SetDict</strong></a>(self, d)</dt><dd><tt>Sets&nbsp;the&nbsp;dictionary.</tt></dd></dl>
+
+<dl><dt><a name="Joint-Smallest"><strong>Smallest</strong></a>(self, n<font color="#909090">=10</font>)</dt><dd><tt>Returns&nbsp;the&nbsp;smallest&nbsp;n&nbsp;values,&nbsp;with&nbsp;frequency/probability.<br>
+&nbsp;<br>
+n:&nbsp;number&nbsp;of&nbsp;items&nbsp;to&nbsp;return</tt></dd></dl>
+
+<dl><dt><a name="Joint-Total"><strong>Total</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;total&nbsp;of&nbsp;the&nbsp;frequencies/probabilities&nbsp;in&nbsp;the&nbsp;map.</tt></dd></dl>
+
+<dl><dt><a name="Joint-Values"><strong>Values</strong></a>(self)</dt><dd><tt>Gets&nbsp;an&nbsp;unsorted&nbsp;sequence&nbsp;of&nbsp;values.<br>
+&nbsp;<br>
+Note:&nbsp;one&nbsp;source&nbsp;of&nbsp;confusion&nbsp;is&nbsp;that&nbsp;the&nbsp;keys&nbsp;of&nbsp;this<br>
+dictionary&nbsp;are&nbsp;the&nbsp;values&nbsp;of&nbsp;the&nbsp;<a href="#Hist">Hist</a>/<a href="#Pmf">Pmf</a>,&nbsp;and&nbsp;the<br>
+values&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;are&nbsp;frequencies/probabilities.</tt></dd></dl>
+
+<dl><dt><a name="Joint-__contains__"><strong>__contains__</strong></a>(self, value)</dt></dl>
+
+<dl><dt><a name="Joint-__delitem__"><strong>__delitem__</strong></a>(self, value)</dt></dl>
+
+<dl><dt><a name="Joint-__eq__"><strong>__eq__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="Joint-__getitem__"><strong>__getitem__</strong></a>(self, value)</dt></dl>
+
+<dl><dt><a name="Joint-__hash__"><strong>__hash__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Joint-__init__"><strong>__init__</strong></a>(self, obj<font color="#909090">=None</font>, label<font color="#909090">=None</font>)</dt><dd><tt>Initializes&nbsp;the&nbsp;distribution.<br>
+&nbsp;<br>
+obj:&nbsp;<a href="#Hist">Hist</a>,&nbsp;<a href="#Pmf">Pmf</a>,&nbsp;<a href="#Cdf">Cdf</a>,&nbsp;<a href="#Pdf">Pdf</a>,&nbsp;dict,&nbsp;pandas&nbsp;Series,&nbsp;list&nbsp;of&nbsp;pairs<br>
+label:&nbsp;string&nbsp;label</tt></dd></dl>
+
+<dl><dt><a name="Joint-__iter__"><strong>__iter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Joint-__len__"><strong>__len__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Joint-__repr__"><strong>__repr__</strong></a> = __str__(self)</dt></dl>
+
+<dl><dt><a name="Joint-__setitem__"><strong>__setitem__</strong></a>(self, value, prob)</dt></dl>
+
+<dl><dt><a name="Joint-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Joint-iterkeys"><strong>iterkeys</strong></a>(self)</dt><dd><tt>Returns&nbsp;an&nbsp;iterator&nbsp;over&nbsp;keys.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkstats2.html#_DictWrapper">_DictWrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="NormalPdf">class <strong>NormalPdf</strong></a>(<a href="thinkstats2.html#Pdf">Pdf</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;the&nbsp;PDF&nbsp;of&nbsp;a&nbsp;Normal&nbsp;distribution.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkstats2.html#NormalPdf">NormalPdf</a></dd>
+<dd><a href="thinkstats2.html#Pdf">Pdf</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="NormalPdf-Density"><strong>Density</strong></a>(self, xs)</dt><dd><tt>Evaluates&nbsp;this&nbsp;<a href="#Pdf">Pdf</a>&nbsp;at&nbsp;xs.<br>
+&nbsp;<br>
+xs:&nbsp;scalar&nbsp;or&nbsp;sequence&nbsp;of&nbsp;floats<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;or&nbsp;NumPy&nbsp;array&nbsp;of&nbsp;probability&nbsp;density</tt></dd></dl>
+
+<dl><dt><a name="NormalPdf-GetLinspace"><strong>GetLinspace</strong></a>(self)</dt><dd><tt>Get&nbsp;a&nbsp;linspace&nbsp;for&nbsp;plotting.<br>
+&nbsp;<br>
+Returns:&nbsp;numpy&nbsp;array</tt></dd></dl>
+
+<dl><dt><a name="NormalPdf-__init__"><strong>__init__</strong></a>(self, mu<font color="#909090">=0</font>, sigma<font color="#909090">=1</font>, label<font color="#909090">=None</font>)</dt><dd><tt>Constructs&nbsp;a&nbsp;Normal&nbsp;<a href="#Pdf">Pdf</a>&nbsp;with&nbsp;given&nbsp;mu&nbsp;and&nbsp;sigma.<br>
+&nbsp;<br>
+mu:&nbsp;mean<br>
+sigma:&nbsp;standard&nbsp;deviation<br>
+label:&nbsp;string</tt></dd></dl>
+
+<dl><dt><a name="NormalPdf-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="thinkstats2.html#Pdf">Pdf</a>:<br>
+<dl><dt><a name="NormalPdf-Items"><strong>Items</strong></a>(self)</dt><dd><tt>Generates&nbsp;a&nbsp;sequence&nbsp;of&nbsp;(value,&nbsp;probability)&nbsp;pairs.</tt></dd></dl>
+
+<dl><dt><a name="NormalPdf-MakePmf"><strong>MakePmf</strong></a>(self, **options)</dt><dd><tt>Makes&nbsp;a&nbsp;discrete&nbsp;version&nbsp;of&nbsp;this&nbsp;<a href="#Pdf">Pdf</a>.<br>
+&nbsp;<br>
+options&nbsp;can&nbsp;include<br>
+label:&nbsp;string<br>
+low:&nbsp;low&nbsp;end&nbsp;of&nbsp;range<br>
+high:&nbsp;high&nbsp;end&nbsp;of&nbsp;range<br>
+n:&nbsp;number&nbsp;of&nbsp;places&nbsp;to&nbsp;evaluate<br>
+&nbsp;<br>
+Returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="NormalPdf-Render"><strong>Render</strong></a>(self, **options)</dt><dd><tt>Generates&nbsp;a&nbsp;sequence&nbsp;of&nbsp;points&nbsp;suitable&nbsp;for&nbsp;plotting.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple&nbsp;of&nbsp;(xs,&nbsp;densities)</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkstats2.html#Pdf">Pdf</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Pdf">class <strong>Pdf</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;probability&nbsp;density&nbsp;function&nbsp;(PDF).<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Pdf-Density"><strong>Density</strong></a>(self, x)</dt><dd><tt>Evaluates&nbsp;this&nbsp;<a href="#Pdf">Pdf</a>&nbsp;at&nbsp;x.<br>
+&nbsp;<br>
+Returns:&nbsp;float&nbsp;or&nbsp;NumPy&nbsp;array&nbsp;of&nbsp;probability&nbsp;density</tt></dd></dl>
+
+<dl><dt><a name="Pdf-GetLinspace"><strong>GetLinspace</strong></a>(self)</dt><dd><tt>Get&nbsp;a&nbsp;linspace&nbsp;for&nbsp;plotting.<br>
+&nbsp;<br>
+Not&nbsp;all&nbsp;subclasses&nbsp;of&nbsp;<a href="#Pdf">Pdf</a>&nbsp;implement&nbsp;this.<br>
+&nbsp;<br>
+Returns:&nbsp;numpy&nbsp;array</tt></dd></dl>
+
+<dl><dt><a name="Pdf-Items"><strong>Items</strong></a>(self)</dt><dd><tt>Generates&nbsp;a&nbsp;sequence&nbsp;of&nbsp;(value,&nbsp;probability)&nbsp;pairs.</tt></dd></dl>
+
+<dl><dt><a name="Pdf-MakePmf"><strong>MakePmf</strong></a>(self, **options)</dt><dd><tt>Makes&nbsp;a&nbsp;discrete&nbsp;version&nbsp;of&nbsp;this&nbsp;<a href="#Pdf">Pdf</a>.<br>
+&nbsp;<br>
+options&nbsp;can&nbsp;include<br>
+label:&nbsp;string<br>
+low:&nbsp;low&nbsp;end&nbsp;of&nbsp;range<br>
+high:&nbsp;high&nbsp;end&nbsp;of&nbsp;range<br>
+n:&nbsp;number&nbsp;of&nbsp;places&nbsp;to&nbsp;evaluate<br>
+&nbsp;<br>
+Returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Pdf-Render"><strong>Render</strong></a>(self, **options)</dt><dd><tt>Generates&nbsp;a&nbsp;sequence&nbsp;of&nbsp;points&nbsp;suitable&nbsp;for&nbsp;plotting.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple&nbsp;of&nbsp;(xs,&nbsp;densities)</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Pmf">class <strong>Pmf</strong></a>(<a href="thinkstats2.html#_DictWrapper">_DictWrapper</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;probability&nbsp;mass&nbsp;function.<br>
+&nbsp;<br>
+Values&nbsp;can&nbsp;be&nbsp;any&nbsp;hashable&nbsp;type;&nbsp;probabilities&nbsp;are&nbsp;floating-point.<br>
+Pmfs&nbsp;are&nbsp;not&nbsp;necessarily&nbsp;normalized.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkstats2.html#Pmf">Pmf</a></dd>
+<dd><a href="thinkstats2.html#_DictWrapper">_DictWrapper</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Pmf-AddConstant"><strong>AddConstant</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;sum&nbsp;a&nbsp;constant&nbsp;and&nbsp;values&nbsp;from&nbsp;self.<br>
+&nbsp;<br>
+other:&nbsp;a&nbsp;number<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Pmf-AddPmf"><strong>AddPmf</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;sum&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Pmf-CredibleInterval"><strong>CredibleInterval</strong></a>(self, percentage<font color="#909090">=90</font>)</dt><dd><tt>Computes&nbsp;the&nbsp;central&nbsp;credible&nbsp;interval.<br>
+&nbsp;<br>
+If&nbsp;percentage=90,&nbsp;computes&nbsp;the&nbsp;90%&nbsp;CI.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;percentage:&nbsp;float&nbsp;between&nbsp;0&nbsp;and&nbsp;100<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sequence&nbsp;of&nbsp;two&nbsp;floats,&nbsp;low&nbsp;and&nbsp;high</tt></dd></dl>
+
+<dl><dt><a name="Pmf-DivPmf"><strong>DivPmf</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;ratio&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Pmf-Max"><strong>Max</strong></a>(self, k)</dt><dd><tt>Computes&nbsp;the&nbsp;CDF&nbsp;of&nbsp;the&nbsp;maximum&nbsp;of&nbsp;k&nbsp;selections&nbsp;from&nbsp;this&nbsp;dist.<br>
+&nbsp;<br>
+k:&nbsp;int<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Cdf">Cdf</a></tt></dd></dl>
+
+<dl><dt><a name="Pmf-MaximumLikelihood"><strong>MaximumLikelihood</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;value&nbsp;with&nbsp;the&nbsp;highest&nbsp;probability.<br>
+&nbsp;<br>
+Returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Pmf-Mean"><strong>Mean</strong></a>(self)</dt><dd><tt>Computes&nbsp;the&nbsp;mean&nbsp;of&nbsp;a&nbsp;PMF.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;mean</tt></dd></dl>
+
+<dl><dt><a name="Pmf-MulConstant"><strong>MulConstant</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;product&nbsp;of&nbsp;a&nbsp;constant&nbsp;and&nbsp;values&nbsp;from&nbsp;self.<br>
+&nbsp;<br>
+other:&nbsp;a&nbsp;number<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Pmf-MulPmf"><strong>MulPmf</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;diff&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Pmf-Normalize"><strong>Normalize</strong></a>(self, fraction<font color="#909090">=1.0</font>)</dt><dd><tt>Normalizes&nbsp;this&nbsp;PMF&nbsp;so&nbsp;the&nbsp;sum&nbsp;of&nbsp;all&nbsp;probs&nbsp;is&nbsp;fraction.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fraction:&nbsp;what&nbsp;the&nbsp;total&nbsp;should&nbsp;be&nbsp;after&nbsp;normalization<br>
+&nbsp;<br>
+Returns:&nbsp;the&nbsp;total&nbsp;probability&nbsp;before&nbsp;normalizing</tt></dd></dl>
+
+<dl><dt><a name="Pmf-Percentile"><strong>Percentile</strong></a>(self, percentage)</dt><dd><tt>Computes&nbsp;a&nbsp;percentile&nbsp;of&nbsp;a&nbsp;given&nbsp;<a href="#Pmf">Pmf</a>.<br>
+&nbsp;<br>
+Note:&nbsp;this&nbsp;is&nbsp;not&nbsp;super&nbsp;efficient.&nbsp;&nbsp;If&nbsp;you&nbsp;are&nbsp;planning<br>
+to&nbsp;compute&nbsp;more&nbsp;than&nbsp;a&nbsp;few&nbsp;percentiles,&nbsp;compute&nbsp;the&nbsp;<a href="#Cdf">Cdf</a>.<br>
+&nbsp;<br>
+percentage:&nbsp;float&nbsp;0-100<br>
+&nbsp;<br>
+returns:&nbsp;value&nbsp;from&nbsp;the&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Pmf-Prob"><strong>Prob</strong></a>(self, x, default<font color="#909090">=0</font>)</dt><dd><tt>Gets&nbsp;the&nbsp;probability&nbsp;associated&nbsp;with&nbsp;the&nbsp;value&nbsp;x.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;number&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;default:&nbsp;value&nbsp;to&nbsp;return&nbsp;if&nbsp;the&nbsp;key&nbsp;is&nbsp;not&nbsp;there<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Pmf-ProbGreater"><strong>ProbGreater</strong></a>(self, x)</dt><dd><tt>Probability&nbsp;that&nbsp;a&nbsp;sample&nbsp;from&nbsp;this&nbsp;<a href="#Pmf">Pmf</a>&nbsp;exceeds&nbsp;x.<br>
+&nbsp;<br>
+x:&nbsp;number<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Pmf-ProbLess"><strong>ProbLess</strong></a>(self, x)</dt><dd><tt>Probability&nbsp;that&nbsp;a&nbsp;sample&nbsp;from&nbsp;this&nbsp;<a href="#Pmf">Pmf</a>&nbsp;is&nbsp;less&nbsp;than&nbsp;x.<br>
+&nbsp;<br>
+x:&nbsp;number<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Pmf-Probs"><strong>Probs</strong></a>(self, xs)</dt><dd><tt>Gets&nbsp;probabilities&nbsp;for&nbsp;a&nbsp;sequence&nbsp;of&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="Pmf-Random"><strong>Random</strong></a>(self)</dt><dd><tt>Chooses&nbsp;a&nbsp;random&nbsp;element&nbsp;from&nbsp;this&nbsp;PMF.<br>
+&nbsp;<br>
+Note:&nbsp;this&nbsp;is&nbsp;not&nbsp;very&nbsp;efficient.&nbsp;&nbsp;If&nbsp;you&nbsp;plan&nbsp;to&nbsp;call<br>
+this&nbsp;more&nbsp;than&nbsp;a&nbsp;few&nbsp;times,&nbsp;consider&nbsp;converting&nbsp;to&nbsp;a&nbsp;CDF.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;value&nbsp;from&nbsp;the&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Pmf-Std"><strong>Std</strong></a>(self, mu<font color="#909090">=None</font>)</dt><dd><tt>Computes&nbsp;the&nbsp;standard&nbsp;deviation&nbsp;of&nbsp;a&nbsp;PMF.<br>
+&nbsp;<br>
+mu:&nbsp;the&nbsp;point&nbsp;around&nbsp;which&nbsp;the&nbsp;variance&nbsp;is&nbsp;computed;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;omitted,&nbsp;computes&nbsp;the&nbsp;mean<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;standard&nbsp;deviation</tt></dd></dl>
+
+<dl><dt><a name="Pmf-SubPmf"><strong>SubPmf</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;diff&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Pmf-Var"><strong>Var</strong></a>(self, mu<font color="#909090">=None</font>)</dt><dd><tt>Computes&nbsp;the&nbsp;variance&nbsp;of&nbsp;a&nbsp;PMF.<br>
+&nbsp;<br>
+mu:&nbsp;the&nbsp;point&nbsp;around&nbsp;which&nbsp;the&nbsp;variance&nbsp;is&nbsp;computed;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;omitted,&nbsp;computes&nbsp;the&nbsp;mean<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;variance</tt></dd></dl>
+
+<dl><dt><a name="Pmf-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;sum&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a>&nbsp;or&nbsp;a&nbsp;scalar<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Pmf-__div__"><strong>__div__</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;ratio&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Pmf-__ge__"><strong>__ge__</strong></a>(self, obj)</dt><dd><tt>Greater&nbsp;than&nbsp;or&nbsp;equal.<br>
+&nbsp;<br>
+obj:&nbsp;number&nbsp;or&nbsp;_DictWrapper<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Pmf-__gt__"><strong>__gt__</strong></a>(self, obj)</dt><dd><tt>Greater&nbsp;than.<br>
+&nbsp;<br>
+obj:&nbsp;number&nbsp;or&nbsp;_DictWrapper<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Pmf-__le__"><strong>__le__</strong></a>(self, obj)</dt><dd><tt>Less&nbsp;than&nbsp;or&nbsp;equal.<br>
+&nbsp;<br>
+obj:&nbsp;number&nbsp;or&nbsp;_DictWrapper<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Pmf-__lt__"><strong>__lt__</strong></a>(self, obj)</dt><dd><tt>Less&nbsp;than.<br>
+&nbsp;<br>
+obj:&nbsp;number&nbsp;or&nbsp;_DictWrapper<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Pmf-__mul__"><strong>__mul__</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;product&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Pmf-__sub__"><strong>__sub__</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;diff&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Pmf-__truediv__"><strong>__truediv__</strong></a> = <a href="#Pmf-__div__">__div__</a>(self, other)</dt></dl>
+
+<hr>
+Methods inherited from <a href="thinkstats2.html#_DictWrapper">_DictWrapper</a>:<br>
+<dl><dt><a name="Pmf-Copy"><strong>Copy</strong></a>(self, label<font color="#909090">=None</font>)</dt><dd><tt>Returns&nbsp;a&nbsp;copy.<br>
+&nbsp;<br>
+Make&nbsp;a&nbsp;shallow&nbsp;copy&nbsp;of&nbsp;d.&nbsp;&nbsp;If&nbsp;you&nbsp;want&nbsp;a&nbsp;deep&nbsp;copy&nbsp;of&nbsp;d,<br>
+use&nbsp;copy.deepcopy&nbsp;on&nbsp;the&nbsp;whole&nbsp;<a href="__builtin__.html#object">object</a>.<br>
+&nbsp;<br>
+label:&nbsp;string&nbsp;label&nbsp;for&nbsp;the&nbsp;new&nbsp;<a href="#Hist">Hist</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;_DictWrapper&nbsp;with&nbsp;the&nbsp;same&nbsp;type</tt></dd></dl>
+
+<dl><dt><a name="Pmf-Exp"><strong>Exp</strong></a>(self, m<font color="#909090">=None</font>)</dt><dd><tt>Exponentiates&nbsp;the&nbsp;probabilities.<br>
+&nbsp;<br>
+m:&nbsp;how&nbsp;much&nbsp;to&nbsp;shift&nbsp;the&nbsp;ps&nbsp;before&nbsp;exponentiating<br>
+&nbsp;<br>
+If&nbsp;m&nbsp;is&nbsp;None,&nbsp;normalizes&nbsp;so&nbsp;that&nbsp;the&nbsp;largest&nbsp;prob&nbsp;is&nbsp;1.</tt></dd></dl>
+
+<dl><dt><a name="Pmf-GetDict"><strong>GetDict</strong></a>(self)</dt><dd><tt>Gets&nbsp;the&nbsp;dictionary.</tt></dd></dl>
+
+<dl><dt><a name="Pmf-Incr"><strong>Incr</strong></a>(self, x, term<font color="#909090">=1</font>)</dt><dd><tt>Increments&nbsp;the&nbsp;freq/prob&nbsp;associated&nbsp;with&nbsp;the&nbsp;value&nbsp;x.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;number&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;term:&nbsp;how&nbsp;much&nbsp;to&nbsp;increment&nbsp;by</tt></dd></dl>
+
+<dl><dt><a name="Pmf-Items"><strong>Items</strong></a>(self)</dt><dd><tt>Gets&nbsp;an&nbsp;unsorted&nbsp;sequence&nbsp;of&nbsp;(value,&nbsp;freq/prob)&nbsp;pairs.</tt></dd></dl>
+
+<dl><dt><a name="Pmf-Largest"><strong>Largest</strong></a>(self, n<font color="#909090">=10</font>)</dt><dd><tt>Returns&nbsp;the&nbsp;largest&nbsp;n&nbsp;values,&nbsp;with&nbsp;frequency/probability.<br>
+&nbsp;<br>
+n:&nbsp;number&nbsp;of&nbsp;items&nbsp;to&nbsp;return</tt></dd></dl>
+
+<dl><dt><a name="Pmf-Log"><strong>Log</strong></a>(self, m<font color="#909090">=None</font>)</dt><dd><tt>Log&nbsp;transforms&nbsp;the&nbsp;probabilities.<br>
+&nbsp;<br>
+Removes&nbsp;values&nbsp;with&nbsp;probability&nbsp;0.<br>
+&nbsp;<br>
+Normalizes&nbsp;so&nbsp;that&nbsp;the&nbsp;largest&nbsp;logprob&nbsp;is&nbsp;0.</tt></dd></dl>
+
+<dl><dt><a name="Pmf-MakeCdf"><strong>MakeCdf</strong></a>(self, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Cdf">Cdf</a>.</tt></dd></dl>
+
+<dl><dt><a name="Pmf-MaxLike"><strong>MaxLike</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;largest&nbsp;frequency/probability&nbsp;in&nbsp;the&nbsp;map.</tt></dd></dl>
+
+<dl><dt><a name="Pmf-Mult"><strong>Mult</strong></a>(self, x, factor)</dt><dd><tt>Scales&nbsp;the&nbsp;freq/prob&nbsp;associated&nbsp;with&nbsp;the&nbsp;value&nbsp;x.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;number&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;factor:&nbsp;how&nbsp;much&nbsp;to&nbsp;multiply&nbsp;by</tt></dd></dl>
+
+<dl><dt><a name="Pmf-Print"><strong>Print</strong></a>(self)</dt><dd><tt>Prints&nbsp;the&nbsp;values&nbsp;and&nbsp;freqs/probs&nbsp;in&nbsp;ascending&nbsp;order.</tt></dd></dl>
+
+<dl><dt><a name="Pmf-Remove"><strong>Remove</strong></a>(self, x)</dt><dd><tt>Removes&nbsp;a&nbsp;value.<br>
+&nbsp;<br>
+Throws&nbsp;an&nbsp;exception&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;there.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;value&nbsp;to&nbsp;remove</tt></dd></dl>
+
+<dl><dt><a name="Pmf-Render"><strong>Render</strong></a>(self, **options)</dt><dd><tt>Generates&nbsp;a&nbsp;sequence&nbsp;of&nbsp;points&nbsp;suitable&nbsp;for&nbsp;plotting.<br>
+&nbsp;<br>
+Note:&nbsp;options&nbsp;are&nbsp;ignored<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple&nbsp;of&nbsp;(sorted&nbsp;value&nbsp;sequence,&nbsp;freq/prob&nbsp;sequence)</tt></dd></dl>
+
+<dl><dt><a name="Pmf-Scale"><strong>Scale</strong></a>(self, factor)</dt><dd><tt>Multiplies&nbsp;the&nbsp;values&nbsp;by&nbsp;a&nbsp;factor.<br>
+&nbsp;<br>
+factor:&nbsp;what&nbsp;to&nbsp;multiply&nbsp;by<br>
+&nbsp;<br>
+Returns:&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Pmf-Set"><strong>Set</strong></a>(self, x, y<font color="#909090">=0</font>)</dt><dd><tt>Sets&nbsp;the&nbsp;freq/prob&nbsp;associated&nbsp;with&nbsp;the&nbsp;value&nbsp;x.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;number&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y:&nbsp;number&nbsp;freq&nbsp;or&nbsp;prob</tt></dd></dl>
+
+<dl><dt><a name="Pmf-SetDict"><strong>SetDict</strong></a>(self, d)</dt><dd><tt>Sets&nbsp;the&nbsp;dictionary.</tt></dd></dl>
+
+<dl><dt><a name="Pmf-Smallest"><strong>Smallest</strong></a>(self, n<font color="#909090">=10</font>)</dt><dd><tt>Returns&nbsp;the&nbsp;smallest&nbsp;n&nbsp;values,&nbsp;with&nbsp;frequency/probability.<br>
+&nbsp;<br>
+n:&nbsp;number&nbsp;of&nbsp;items&nbsp;to&nbsp;return</tt></dd></dl>
+
+<dl><dt><a name="Pmf-Total"><strong>Total</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;total&nbsp;of&nbsp;the&nbsp;frequencies/probabilities&nbsp;in&nbsp;the&nbsp;map.</tt></dd></dl>
+
+<dl><dt><a name="Pmf-Values"><strong>Values</strong></a>(self)</dt><dd><tt>Gets&nbsp;an&nbsp;unsorted&nbsp;sequence&nbsp;of&nbsp;values.<br>
+&nbsp;<br>
+Note:&nbsp;one&nbsp;source&nbsp;of&nbsp;confusion&nbsp;is&nbsp;that&nbsp;the&nbsp;keys&nbsp;of&nbsp;this<br>
+dictionary&nbsp;are&nbsp;the&nbsp;values&nbsp;of&nbsp;the&nbsp;<a href="#Hist">Hist</a>/<a href="#Pmf">Pmf</a>,&nbsp;and&nbsp;the<br>
+values&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;are&nbsp;frequencies/probabilities.</tt></dd></dl>
+
+<dl><dt><a name="Pmf-__contains__"><strong>__contains__</strong></a>(self, value)</dt></dl>
+
+<dl><dt><a name="Pmf-__delitem__"><strong>__delitem__</strong></a>(self, value)</dt></dl>
+
+<dl><dt><a name="Pmf-__eq__"><strong>__eq__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="Pmf-__getitem__"><strong>__getitem__</strong></a>(self, value)</dt></dl>
+
+<dl><dt><a name="Pmf-__hash__"><strong>__hash__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Pmf-__init__"><strong>__init__</strong></a>(self, obj<font color="#909090">=None</font>, label<font color="#909090">=None</font>)</dt><dd><tt>Initializes&nbsp;the&nbsp;distribution.<br>
+&nbsp;<br>
+obj:&nbsp;<a href="#Hist">Hist</a>,&nbsp;<a href="#Pmf">Pmf</a>,&nbsp;<a href="#Cdf">Cdf</a>,&nbsp;<a href="#Pdf">Pdf</a>,&nbsp;dict,&nbsp;pandas&nbsp;Series,&nbsp;list&nbsp;of&nbsp;pairs<br>
+label:&nbsp;string&nbsp;label</tt></dd></dl>
+
+<dl><dt><a name="Pmf-__iter__"><strong>__iter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Pmf-__len__"><strong>__len__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Pmf-__repr__"><strong>__repr__</strong></a> = __str__(self)</dt></dl>
+
+<dl><dt><a name="Pmf-__setitem__"><strong>__setitem__</strong></a>(self, value, prob)</dt></dl>
+
+<dl><dt><a name="Pmf-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Pmf-iterkeys"><strong>iterkeys</strong></a>(self)</dt><dd><tt>Returns&nbsp;an&nbsp;iterator&nbsp;over&nbsp;keys.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkstats2.html#_DictWrapper">_DictWrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Suite">class <strong>Suite</strong></a>(<a href="thinkstats2.html#Pmf">Pmf</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;suite&nbsp;of&nbsp;hypotheses&nbsp;and&nbsp;their&nbsp;probabilities.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkstats2.html#Suite">Suite</a></dd>
+<dd><a href="thinkstats2.html#Pmf">Pmf</a></dd>
+<dd><a href="thinkstats2.html#_DictWrapper">_DictWrapper</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Suite-Likelihood"><strong>Likelihood</strong></a>(self, data, hypo)</dt><dd><tt>Computes&nbsp;the&nbsp;likelihood&nbsp;of&nbsp;the&nbsp;data&nbsp;under&nbsp;the&nbsp;hypothesis.<br>
+&nbsp;<br>
+hypo:&nbsp;some&nbsp;representation&nbsp;of&nbsp;the&nbsp;hypothesis<br>
+data:&nbsp;some&nbsp;representation&nbsp;of&nbsp;the&nbsp;data</tt></dd></dl>
+
+<dl><dt><a name="Suite-LogLikelihood"><strong>LogLikelihood</strong></a>(self, data, hypo)</dt><dd><tt>Computes&nbsp;the&nbsp;log&nbsp;likelihood&nbsp;of&nbsp;the&nbsp;data&nbsp;under&nbsp;the&nbsp;hypothesis.<br>
+&nbsp;<br>
+hypo:&nbsp;some&nbsp;representation&nbsp;of&nbsp;the&nbsp;hypothesis<br>
+data:&nbsp;some&nbsp;representation&nbsp;of&nbsp;the&nbsp;data</tt></dd></dl>
+
+<dl><dt><a name="Suite-LogUpdate"><strong>LogUpdate</strong></a>(self, data)</dt><dd><tt>Updates&nbsp;a&nbsp;suite&nbsp;of&nbsp;hypotheses&nbsp;based&nbsp;on&nbsp;new&nbsp;data.<br>
+&nbsp;<br>
+Modifies&nbsp;the&nbsp;suite&nbsp;directly;&nbsp;if&nbsp;you&nbsp;want&nbsp;to&nbsp;keep&nbsp;the&nbsp;original,&nbsp;make<br>
+a&nbsp;copy.<br>
+&nbsp;<br>
+Note:&nbsp;unlike&nbsp;Update,&nbsp;LogUpdate&nbsp;does&nbsp;not&nbsp;normalize.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data:&nbsp;any&nbsp;representation&nbsp;of&nbsp;the&nbsp;data</tt></dd></dl>
+
+<dl><dt><a name="Suite-LogUpdateSet"><strong>LogUpdateSet</strong></a>(self, dataset)</dt><dd><tt>Updates&nbsp;each&nbsp;hypothesis&nbsp;based&nbsp;on&nbsp;the&nbsp;dataset.<br>
+&nbsp;<br>
+Modifies&nbsp;the&nbsp;suite&nbsp;directly;&nbsp;if&nbsp;you&nbsp;want&nbsp;to&nbsp;keep&nbsp;the&nbsp;original,&nbsp;make<br>
+a&nbsp;copy.<br>
+&nbsp;<br>
+dataset:&nbsp;a&nbsp;sequence&nbsp;of&nbsp;data<br>
+&nbsp;<br>
+returns:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Suite-MakeOdds"><strong>MakeOdds</strong></a>(self)</dt><dd><tt>Transforms&nbsp;from&nbsp;probabilities&nbsp;to&nbsp;odds.<br>
+&nbsp;<br>
+Values&nbsp;with&nbsp;prob=0&nbsp;are&nbsp;removed.</tt></dd></dl>
+
+<dl><dt><a name="Suite-MakeProbs"><strong>MakeProbs</strong></a>(self)</dt><dd><tt>Transforms&nbsp;from&nbsp;odds&nbsp;to&nbsp;probabilities.</tt></dd></dl>
+
+<dl><dt><a name="Suite-Print"><strong>Print</strong></a>(self)</dt><dd><tt>Prints&nbsp;the&nbsp;hypotheses&nbsp;and&nbsp;their&nbsp;probabilities.</tt></dd></dl>
+
+<dl><dt><a name="Suite-Update"><strong>Update</strong></a>(self, data)</dt><dd><tt>Updates&nbsp;each&nbsp;hypothesis&nbsp;based&nbsp;on&nbsp;the&nbsp;data.<br>
+&nbsp;<br>
+data:&nbsp;any&nbsp;representation&nbsp;of&nbsp;the&nbsp;data<br>
+&nbsp;<br>
+returns:&nbsp;the&nbsp;normalizing&nbsp;constant</tt></dd></dl>
+
+<dl><dt><a name="Suite-UpdateSet"><strong>UpdateSet</strong></a>(self, dataset)</dt><dd><tt>Updates&nbsp;each&nbsp;hypothesis&nbsp;based&nbsp;on&nbsp;the&nbsp;dataset.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;more&nbsp;efficient&nbsp;than&nbsp;calling&nbsp;Update&nbsp;repeatedly&nbsp;because<br>
+it&nbsp;waits&nbsp;until&nbsp;the&nbsp;end&nbsp;to&nbsp;Normalize.<br>
+&nbsp;<br>
+Modifies&nbsp;the&nbsp;suite&nbsp;directly;&nbsp;if&nbsp;you&nbsp;want&nbsp;to&nbsp;keep&nbsp;the&nbsp;original,&nbsp;make<br>
+a&nbsp;copy.<br>
+&nbsp;<br>
+dataset:&nbsp;a&nbsp;sequence&nbsp;of&nbsp;data<br>
+&nbsp;<br>
+returns:&nbsp;the&nbsp;normalizing&nbsp;constant</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="thinkstats2.html#Pmf">Pmf</a>:<br>
+<dl><dt><a name="Suite-AddConstant"><strong>AddConstant</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;sum&nbsp;a&nbsp;constant&nbsp;and&nbsp;values&nbsp;from&nbsp;self.<br>
+&nbsp;<br>
+other:&nbsp;a&nbsp;number<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Suite-AddPmf"><strong>AddPmf</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;sum&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Suite-CredibleInterval"><strong>CredibleInterval</strong></a>(self, percentage<font color="#909090">=90</font>)</dt><dd><tt>Computes&nbsp;the&nbsp;central&nbsp;credible&nbsp;interval.<br>
+&nbsp;<br>
+If&nbsp;percentage=90,&nbsp;computes&nbsp;the&nbsp;90%&nbsp;CI.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;percentage:&nbsp;float&nbsp;between&nbsp;0&nbsp;and&nbsp;100<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sequence&nbsp;of&nbsp;two&nbsp;floats,&nbsp;low&nbsp;and&nbsp;high</tt></dd></dl>
+
+<dl><dt><a name="Suite-DivPmf"><strong>DivPmf</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;ratio&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Suite-Max"><strong>Max</strong></a>(self, k)</dt><dd><tt>Computes&nbsp;the&nbsp;CDF&nbsp;of&nbsp;the&nbsp;maximum&nbsp;of&nbsp;k&nbsp;selections&nbsp;from&nbsp;this&nbsp;dist.<br>
+&nbsp;<br>
+k:&nbsp;int<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Cdf">Cdf</a></tt></dd></dl>
+
+<dl><dt><a name="Suite-MaximumLikelihood"><strong>MaximumLikelihood</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;value&nbsp;with&nbsp;the&nbsp;highest&nbsp;probability.<br>
+&nbsp;<br>
+Returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Suite-Mean"><strong>Mean</strong></a>(self)</dt><dd><tt>Computes&nbsp;the&nbsp;mean&nbsp;of&nbsp;a&nbsp;PMF.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;mean</tt></dd></dl>
+
+<dl><dt><a name="Suite-MulConstant"><strong>MulConstant</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;product&nbsp;of&nbsp;a&nbsp;constant&nbsp;and&nbsp;values&nbsp;from&nbsp;self.<br>
+&nbsp;<br>
+other:&nbsp;a&nbsp;number<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Suite-MulPmf"><strong>MulPmf</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;diff&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Suite-Normalize"><strong>Normalize</strong></a>(self, fraction<font color="#909090">=1.0</font>)</dt><dd><tt>Normalizes&nbsp;this&nbsp;PMF&nbsp;so&nbsp;the&nbsp;sum&nbsp;of&nbsp;all&nbsp;probs&nbsp;is&nbsp;fraction.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fraction:&nbsp;what&nbsp;the&nbsp;total&nbsp;should&nbsp;be&nbsp;after&nbsp;normalization<br>
+&nbsp;<br>
+Returns:&nbsp;the&nbsp;total&nbsp;probability&nbsp;before&nbsp;normalizing</tt></dd></dl>
+
+<dl><dt><a name="Suite-Percentile"><strong>Percentile</strong></a>(self, percentage)</dt><dd><tt>Computes&nbsp;a&nbsp;percentile&nbsp;of&nbsp;a&nbsp;given&nbsp;<a href="#Pmf">Pmf</a>.<br>
+&nbsp;<br>
+Note:&nbsp;this&nbsp;is&nbsp;not&nbsp;super&nbsp;efficient.&nbsp;&nbsp;If&nbsp;you&nbsp;are&nbsp;planning<br>
+to&nbsp;compute&nbsp;more&nbsp;than&nbsp;a&nbsp;few&nbsp;percentiles,&nbsp;compute&nbsp;the&nbsp;<a href="#Cdf">Cdf</a>.<br>
+&nbsp;<br>
+percentage:&nbsp;float&nbsp;0-100<br>
+&nbsp;<br>
+returns:&nbsp;value&nbsp;from&nbsp;the&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Suite-Prob"><strong>Prob</strong></a>(self, x, default<font color="#909090">=0</font>)</dt><dd><tt>Gets&nbsp;the&nbsp;probability&nbsp;associated&nbsp;with&nbsp;the&nbsp;value&nbsp;x.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;number&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;default:&nbsp;value&nbsp;to&nbsp;return&nbsp;if&nbsp;the&nbsp;key&nbsp;is&nbsp;not&nbsp;there<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Suite-ProbGreater"><strong>ProbGreater</strong></a>(self, x)</dt><dd><tt>Probability&nbsp;that&nbsp;a&nbsp;sample&nbsp;from&nbsp;this&nbsp;<a href="#Pmf">Pmf</a>&nbsp;exceeds&nbsp;x.<br>
+&nbsp;<br>
+x:&nbsp;number<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Suite-ProbLess"><strong>ProbLess</strong></a>(self, x)</dt><dd><tt>Probability&nbsp;that&nbsp;a&nbsp;sample&nbsp;from&nbsp;this&nbsp;<a href="#Pmf">Pmf</a>&nbsp;is&nbsp;less&nbsp;than&nbsp;x.<br>
+&nbsp;<br>
+x:&nbsp;number<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Suite-Probs"><strong>Probs</strong></a>(self, xs)</dt><dd><tt>Gets&nbsp;probabilities&nbsp;for&nbsp;a&nbsp;sequence&nbsp;of&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="Suite-Random"><strong>Random</strong></a>(self)</dt><dd><tt>Chooses&nbsp;a&nbsp;random&nbsp;element&nbsp;from&nbsp;this&nbsp;PMF.<br>
+&nbsp;<br>
+Note:&nbsp;this&nbsp;is&nbsp;not&nbsp;very&nbsp;efficient.&nbsp;&nbsp;If&nbsp;you&nbsp;plan&nbsp;to&nbsp;call<br>
+this&nbsp;more&nbsp;than&nbsp;a&nbsp;few&nbsp;times,&nbsp;consider&nbsp;converting&nbsp;to&nbsp;a&nbsp;CDF.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;value&nbsp;from&nbsp;the&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Suite-Std"><strong>Std</strong></a>(self, mu<font color="#909090">=None</font>)</dt><dd><tt>Computes&nbsp;the&nbsp;standard&nbsp;deviation&nbsp;of&nbsp;a&nbsp;PMF.<br>
+&nbsp;<br>
+mu:&nbsp;the&nbsp;point&nbsp;around&nbsp;which&nbsp;the&nbsp;variance&nbsp;is&nbsp;computed;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;omitted,&nbsp;computes&nbsp;the&nbsp;mean<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;standard&nbsp;deviation</tt></dd></dl>
+
+<dl><dt><a name="Suite-SubPmf"><strong>SubPmf</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;diff&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Suite-Var"><strong>Var</strong></a>(self, mu<font color="#909090">=None</font>)</dt><dd><tt>Computes&nbsp;the&nbsp;variance&nbsp;of&nbsp;a&nbsp;PMF.<br>
+&nbsp;<br>
+mu:&nbsp;the&nbsp;point&nbsp;around&nbsp;which&nbsp;the&nbsp;variance&nbsp;is&nbsp;computed;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;omitted,&nbsp;computes&nbsp;the&nbsp;mean<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;variance</tt></dd></dl>
+
+<dl><dt><a name="Suite-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;sum&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a>&nbsp;or&nbsp;a&nbsp;scalar<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Suite-__div__"><strong>__div__</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;ratio&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Suite-__ge__"><strong>__ge__</strong></a>(self, obj)</dt><dd><tt>Greater&nbsp;than&nbsp;or&nbsp;equal.<br>
+&nbsp;<br>
+obj:&nbsp;number&nbsp;or&nbsp;_DictWrapper<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Suite-__gt__"><strong>__gt__</strong></a>(self, obj)</dt><dd><tt>Greater&nbsp;than.<br>
+&nbsp;<br>
+obj:&nbsp;number&nbsp;or&nbsp;_DictWrapper<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Suite-__le__"><strong>__le__</strong></a>(self, obj)</dt><dd><tt>Less&nbsp;than&nbsp;or&nbsp;equal.<br>
+&nbsp;<br>
+obj:&nbsp;number&nbsp;or&nbsp;_DictWrapper<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Suite-__lt__"><strong>__lt__</strong></a>(self, obj)</dt><dd><tt>Less&nbsp;than.<br>
+&nbsp;<br>
+obj:&nbsp;number&nbsp;or&nbsp;_DictWrapper<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+
+<dl><dt><a name="Suite-__mul__"><strong>__mul__</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;product&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Suite-__sub__"><strong>__sub__</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;diff&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<dl><dt><a name="Suite-__truediv__"><strong>__truediv__</strong></a> = __div__(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;the&nbsp;ratio&nbsp;of&nbsp;values&nbsp;drawn&nbsp;from&nbsp;self&nbsp;and&nbsp;other.<br>
+&nbsp;<br>
+other:&nbsp;another&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="thinkstats2.html#_DictWrapper">_DictWrapper</a>:<br>
+<dl><dt><a name="Suite-Copy"><strong>Copy</strong></a>(self, label<font color="#909090">=None</font>)</dt><dd><tt>Returns&nbsp;a&nbsp;copy.<br>
+&nbsp;<br>
+Make&nbsp;a&nbsp;shallow&nbsp;copy&nbsp;of&nbsp;d.&nbsp;&nbsp;If&nbsp;you&nbsp;want&nbsp;a&nbsp;deep&nbsp;copy&nbsp;of&nbsp;d,<br>
+use&nbsp;copy.deepcopy&nbsp;on&nbsp;the&nbsp;whole&nbsp;<a href="__builtin__.html#object">object</a>.<br>
+&nbsp;<br>
+label:&nbsp;string&nbsp;label&nbsp;for&nbsp;the&nbsp;new&nbsp;<a href="#Hist">Hist</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;_DictWrapper&nbsp;with&nbsp;the&nbsp;same&nbsp;type</tt></dd></dl>
+
+<dl><dt><a name="Suite-Exp"><strong>Exp</strong></a>(self, m<font color="#909090">=None</font>)</dt><dd><tt>Exponentiates&nbsp;the&nbsp;probabilities.<br>
+&nbsp;<br>
+m:&nbsp;how&nbsp;much&nbsp;to&nbsp;shift&nbsp;the&nbsp;ps&nbsp;before&nbsp;exponentiating<br>
+&nbsp;<br>
+If&nbsp;m&nbsp;is&nbsp;None,&nbsp;normalizes&nbsp;so&nbsp;that&nbsp;the&nbsp;largest&nbsp;prob&nbsp;is&nbsp;1.</tt></dd></dl>
+
+<dl><dt><a name="Suite-GetDict"><strong>GetDict</strong></a>(self)</dt><dd><tt>Gets&nbsp;the&nbsp;dictionary.</tt></dd></dl>
+
+<dl><dt><a name="Suite-Incr"><strong>Incr</strong></a>(self, x, term<font color="#909090">=1</font>)</dt><dd><tt>Increments&nbsp;the&nbsp;freq/prob&nbsp;associated&nbsp;with&nbsp;the&nbsp;value&nbsp;x.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;number&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;term:&nbsp;how&nbsp;much&nbsp;to&nbsp;increment&nbsp;by</tt></dd></dl>
+
+<dl><dt><a name="Suite-Items"><strong>Items</strong></a>(self)</dt><dd><tt>Gets&nbsp;an&nbsp;unsorted&nbsp;sequence&nbsp;of&nbsp;(value,&nbsp;freq/prob)&nbsp;pairs.</tt></dd></dl>
+
+<dl><dt><a name="Suite-Largest"><strong>Largest</strong></a>(self, n<font color="#909090">=10</font>)</dt><dd><tt>Returns&nbsp;the&nbsp;largest&nbsp;n&nbsp;values,&nbsp;with&nbsp;frequency/probability.<br>
+&nbsp;<br>
+n:&nbsp;number&nbsp;of&nbsp;items&nbsp;to&nbsp;return</tt></dd></dl>
+
+<dl><dt><a name="Suite-Log"><strong>Log</strong></a>(self, m<font color="#909090">=None</font>)</dt><dd><tt>Log&nbsp;transforms&nbsp;the&nbsp;probabilities.<br>
+&nbsp;<br>
+Removes&nbsp;values&nbsp;with&nbsp;probability&nbsp;0.<br>
+&nbsp;<br>
+Normalizes&nbsp;so&nbsp;that&nbsp;the&nbsp;largest&nbsp;logprob&nbsp;is&nbsp;0.</tt></dd></dl>
+
+<dl><dt><a name="Suite-MakeCdf"><strong>MakeCdf</strong></a>(self, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Cdf">Cdf</a>.</tt></dd></dl>
+
+<dl><dt><a name="Suite-MaxLike"><strong>MaxLike</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;largest&nbsp;frequency/probability&nbsp;in&nbsp;the&nbsp;map.</tt></dd></dl>
+
+<dl><dt><a name="Suite-Mult"><strong>Mult</strong></a>(self, x, factor)</dt><dd><tt>Scales&nbsp;the&nbsp;freq/prob&nbsp;associated&nbsp;with&nbsp;the&nbsp;value&nbsp;x.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;number&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;factor:&nbsp;how&nbsp;much&nbsp;to&nbsp;multiply&nbsp;by</tt></dd></dl>
+
+<dl><dt><a name="Suite-Remove"><strong>Remove</strong></a>(self, x)</dt><dd><tt>Removes&nbsp;a&nbsp;value.<br>
+&nbsp;<br>
+Throws&nbsp;an&nbsp;exception&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;there.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;value&nbsp;to&nbsp;remove</tt></dd></dl>
+
+<dl><dt><a name="Suite-Render"><strong>Render</strong></a>(self, **options)</dt><dd><tt>Generates&nbsp;a&nbsp;sequence&nbsp;of&nbsp;points&nbsp;suitable&nbsp;for&nbsp;plotting.<br>
+&nbsp;<br>
+Note:&nbsp;options&nbsp;are&nbsp;ignored<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple&nbsp;of&nbsp;(sorted&nbsp;value&nbsp;sequence,&nbsp;freq/prob&nbsp;sequence)</tt></dd></dl>
+
+<dl><dt><a name="Suite-Scale"><strong>Scale</strong></a>(self, factor)</dt><dd><tt>Multiplies&nbsp;the&nbsp;values&nbsp;by&nbsp;a&nbsp;factor.<br>
+&nbsp;<br>
+factor:&nbsp;what&nbsp;to&nbsp;multiply&nbsp;by<br>
+&nbsp;<br>
+Returns:&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Suite-Set"><strong>Set</strong></a>(self, x, y<font color="#909090">=0</font>)</dt><dd><tt>Sets&nbsp;the&nbsp;freq/prob&nbsp;associated&nbsp;with&nbsp;the&nbsp;value&nbsp;x.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;number&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y:&nbsp;number&nbsp;freq&nbsp;or&nbsp;prob</tt></dd></dl>
+
+<dl><dt><a name="Suite-SetDict"><strong>SetDict</strong></a>(self, d)</dt><dd><tt>Sets&nbsp;the&nbsp;dictionary.</tt></dd></dl>
+
+<dl><dt><a name="Suite-Smallest"><strong>Smallest</strong></a>(self, n<font color="#909090">=10</font>)</dt><dd><tt>Returns&nbsp;the&nbsp;smallest&nbsp;n&nbsp;values,&nbsp;with&nbsp;frequency/probability.<br>
+&nbsp;<br>
+n:&nbsp;number&nbsp;of&nbsp;items&nbsp;to&nbsp;return</tt></dd></dl>
+
+<dl><dt><a name="Suite-Total"><strong>Total</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;total&nbsp;of&nbsp;the&nbsp;frequencies/probabilities&nbsp;in&nbsp;the&nbsp;map.</tt></dd></dl>
+
+<dl><dt><a name="Suite-Values"><strong>Values</strong></a>(self)</dt><dd><tt>Gets&nbsp;an&nbsp;unsorted&nbsp;sequence&nbsp;of&nbsp;values.<br>
+&nbsp;<br>
+Note:&nbsp;one&nbsp;source&nbsp;of&nbsp;confusion&nbsp;is&nbsp;that&nbsp;the&nbsp;keys&nbsp;of&nbsp;this<br>
+dictionary&nbsp;are&nbsp;the&nbsp;values&nbsp;of&nbsp;the&nbsp;<a href="#Hist">Hist</a>/<a href="#Pmf">Pmf</a>,&nbsp;and&nbsp;the<br>
+values&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;are&nbsp;frequencies/probabilities.</tt></dd></dl>
+
+<dl><dt><a name="Suite-__contains__"><strong>__contains__</strong></a>(self, value)</dt></dl>
+
+<dl><dt><a name="Suite-__delitem__"><strong>__delitem__</strong></a>(self, value)</dt></dl>
+
+<dl><dt><a name="Suite-__eq__"><strong>__eq__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="Suite-__getitem__"><strong>__getitem__</strong></a>(self, value)</dt></dl>
+
+<dl><dt><a name="Suite-__hash__"><strong>__hash__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Suite-__init__"><strong>__init__</strong></a>(self, obj<font color="#909090">=None</font>, label<font color="#909090">=None</font>)</dt><dd><tt>Initializes&nbsp;the&nbsp;distribution.<br>
+&nbsp;<br>
+obj:&nbsp;<a href="#Hist">Hist</a>,&nbsp;<a href="#Pmf">Pmf</a>,&nbsp;<a href="#Cdf">Cdf</a>,&nbsp;<a href="#Pdf">Pdf</a>,&nbsp;dict,&nbsp;pandas&nbsp;Series,&nbsp;list&nbsp;of&nbsp;pairs<br>
+label:&nbsp;string&nbsp;label</tt></dd></dl>
+
+<dl><dt><a name="Suite-__iter__"><strong>__iter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Suite-__len__"><strong>__len__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Suite-__repr__"><strong>__repr__</strong></a> = __str__(self)</dt></dl>
+
+<dl><dt><a name="Suite-__setitem__"><strong>__setitem__</strong></a>(self, value, prob)</dt></dl>
+
+<dl><dt><a name="Suite-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Suite-iterkeys"><strong>iterkeys</strong></a>(self)</dt><dd><tt>Returns&nbsp;an&nbsp;iterator&nbsp;over&nbsp;keys.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkstats2.html#_DictWrapper">_DictWrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="UnimplementedMethodException">class <strong>UnimplementedMethodException</strong></a>(<a href="exceptions.html#Exception">exceptions.Exception</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="exceptions.html#Exception">Exception</a>&nbsp;if&nbsp;someone&nbsp;calls&nbsp;a&nbsp;method&nbsp;that&nbsp;should&nbsp;be&nbsp;overridden.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkstats2.html#UnimplementedMethodException">UnimplementedMethodException</a></dd>
+<dd><a href="exceptions.html#Exception">exceptions.Exception</a></dd>
+<dd><a href="exceptions.html#BaseException">exceptions.BaseException</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><a name="UnimplementedMethodException-__init__"><strong>__init__</strong></a>(...)</dt><dd><tt>x.<a href="#UnimplementedMethodException-__init__">__init__</a>(...)&nbsp;initializes&nbsp;x;&nbsp;see&nbsp;help(type(x))&nbsp;for&nbsp;signature</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="exceptions.html#Exception">exceptions.Exception</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#UnimplementedMethodException-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<hr>
+Methods inherited from <a href="exceptions.html#BaseException">exceptions.BaseException</a>:<br>
+<dl><dt><a name="UnimplementedMethodException-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#UnimplementedMethodException-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="UnimplementedMethodException-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#UnimplementedMethodException-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="UnimplementedMethodException-__getitem__"><strong>__getitem__</strong></a>(...)</dt><dd><tt>x.<a href="#UnimplementedMethodException-__getitem__">__getitem__</a>(y)&nbsp;&lt;==&gt;&nbsp;x[y]</tt></dd></dl>
+
+<dl><dt><a name="UnimplementedMethodException-__getslice__"><strong>__getslice__</strong></a>(...)</dt><dd><tt>x.<a href="#UnimplementedMethodException-__getslice__">__getslice__</a>(i,&nbsp;j)&nbsp;&lt;==&gt;&nbsp;x[i:j]<br>
+&nbsp;<br>
+Use&nbsp;of&nbsp;negative&nbsp;indices&nbsp;is&nbsp;not&nbsp;supported.</tt></dd></dl>
+
+<dl><dt><a name="UnimplementedMethodException-__reduce__"><strong>__reduce__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="UnimplementedMethodException-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#UnimplementedMethodException-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="UnimplementedMethodException-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#UnimplementedMethodException-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="UnimplementedMethodException-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="UnimplementedMethodException-__str__"><strong>__str__</strong></a>(...)</dt><dd><tt>x.<a href="#UnimplementedMethodException-__str__">__str__</a>()&nbsp;&lt;==&gt;&nbsp;str(x)</tt></dd></dl>
+
+<dl><dt><a name="UnimplementedMethodException-__unicode__"><strong>__unicode__</strong></a>(...)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="exceptions.html#BaseException">exceptions.BaseException</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+<dl><dt><strong>message</strong></dt>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-BinomialCoef"><strong>BinomialCoef</strong></a>(n, k)</dt><dd><tt>Compute&nbsp;the&nbsp;binomial&nbsp;coefficient&nbsp;"n&nbsp;choose&nbsp;k".<br>
+&nbsp;<br>
+n:&nbsp;number&nbsp;of&nbsp;trials<br>
+k:&nbsp;number&nbsp;of&nbsp;successes<br>
+&nbsp;<br>
+Returns:&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-CentralMoment"><strong>CentralMoment</strong></a>(xs, k)</dt><dd><tt>Computes&nbsp;the&nbsp;kth&nbsp;central&nbsp;moment&nbsp;of&nbsp;xs.</tt></dd></dl>
+ <dl><dt><a name="-CoefDetermination"><strong>CoefDetermination</strong></a>(ys, res)</dt><dd><tt>Computes&nbsp;the&nbsp;coefficient&nbsp;of&nbsp;determination&nbsp;(R^2)&nbsp;for&nbsp;given&nbsp;residuals.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ys:&nbsp;dependent&nbsp;variable<br>
+&nbsp;&nbsp;&nbsp;&nbsp;res:&nbsp;residuals<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;coefficient&nbsp;of&nbsp;determination</tt></dd></dl>
+ <dl><dt><a name="-CohenEffectSize"><strong>CohenEffectSize</strong></a>(group1, group2)</dt><dd><tt>Compute&nbsp;Cohen's&nbsp;d.<br>
+&nbsp;<br>
+group1:&nbsp;Series&nbsp;or&nbsp;NumPy&nbsp;array<br>
+group2:&nbsp;Series&nbsp;or&nbsp;NumPy&nbsp;array<br>
+&nbsp;<br>
+returns:&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-Corr"><strong>Corr</strong></a>(xs, ys)</dt><dd><tt>Computes&nbsp;<a href="#-Corr">Corr</a>(X,&nbsp;Y).<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;xs:&nbsp;sequence&nbsp;of&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ys:&nbsp;sequence&nbsp;of&nbsp;values<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#-Corr">Corr</a>(X,&nbsp;Y)</tt></dd></dl>
+ <dl><dt><a name="-CorrelatedGenerator"><strong>CorrelatedGenerator</strong></a>(rho)</dt><dd><tt>Generates&nbsp;standard&nbsp;normal&nbsp;variates&nbsp;with&nbsp;serial&nbsp;correlation.<br>
+&nbsp;<br>
+rho:&nbsp;target&nbsp;coefficient&nbsp;of&nbsp;correlation<br>
+&nbsp;<br>
+Returns:&nbsp;iterable</tt></dd></dl>
+ <dl><dt><a name="-CorrelatedNormalGenerator"><strong>CorrelatedNormalGenerator</strong></a>(mu, sigma, rho)</dt><dd><tt>Generates&nbsp;normal&nbsp;variates&nbsp;with&nbsp;serial&nbsp;correlation.<br>
+&nbsp;<br>
+mu:&nbsp;mean&nbsp;of&nbsp;variate<br>
+sigma:&nbsp;standard&nbsp;deviation&nbsp;of&nbsp;variate<br>
+rho:&nbsp;target&nbsp;coefficient&nbsp;of&nbsp;correlation<br>
+&nbsp;<br>
+Returns:&nbsp;iterable</tt></dd></dl>
+ <dl><dt><a name="-Cov"><strong>Cov</strong></a>(xs, ys, meanx<font color="#909090">=None</font>, meany<font color="#909090">=None</font>)</dt><dd><tt>Computes&nbsp;<a href="#-Cov">Cov</a>(X,&nbsp;Y).<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;xs:&nbsp;sequence&nbsp;of&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ys:&nbsp;sequence&nbsp;of&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;meanx:&nbsp;optional&nbsp;float&nbsp;mean&nbsp;of&nbsp;xs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;meany:&nbsp;optional&nbsp;float&nbsp;mean&nbsp;of&nbsp;ys<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#-Cov">Cov</a>(X,&nbsp;Y)</tt></dd></dl>
+ <dl><dt><a name="-CredibleInterval"><strong>CredibleInterval</strong></a>(pmf, percentage<font color="#909090">=90</font>)</dt><dd><tt>Computes&nbsp;a&nbsp;credible&nbsp;interval&nbsp;for&nbsp;a&nbsp;given&nbsp;distribution.<br>
+&nbsp;<br>
+If&nbsp;percentage=90,&nbsp;computes&nbsp;the&nbsp;90%&nbsp;CI.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pmf:&nbsp;<a href="#Pmf">Pmf</a>&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;representing&nbsp;a&nbsp;posterior&nbsp;distribution<br>
+&nbsp;&nbsp;&nbsp;&nbsp;percentage:&nbsp;float&nbsp;between&nbsp;0&nbsp;and&nbsp;100<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sequence&nbsp;of&nbsp;two&nbsp;floats,&nbsp;low&nbsp;and&nbsp;high</tt></dd></dl>
+ <dl><dt><a name="-EvalBinomialPmf"><strong>EvalBinomialPmf</strong></a>(k, n, p)</dt><dd><tt>Evaluates&nbsp;the&nbsp;binomial&nbsp;PMF.<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;probabily&nbsp;of&nbsp;k&nbsp;successes&nbsp;in&nbsp;n&nbsp;trials&nbsp;with&nbsp;probability&nbsp;p.</tt></dd></dl>
+ <dl><dt><a name="-EvalExponentialCdf"><strong>EvalExponentialCdf</strong></a>(x, lam)</dt><dd><tt>Evaluates&nbsp;CDF&nbsp;of&nbsp;the&nbsp;exponential&nbsp;distribution&nbsp;with&nbsp;parameter&nbsp;lam.</tt></dd></dl>
+ <dl><dt><a name="-EvalExponentialPdf"><strong>EvalExponentialPdf</strong></a>(x, lam)</dt><dd><tt>Computes&nbsp;the&nbsp;exponential&nbsp;PDF.<br>
+&nbsp;<br>
+x:&nbsp;value<br>
+lam:&nbsp;parameter&nbsp;lambda&nbsp;in&nbsp;events&nbsp;per&nbsp;unit&nbsp;time<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability&nbsp;density</tt></dd></dl>
+ <dl><dt><a name="-EvalHypergeomPmf"><strong>EvalHypergeomPmf</strong></a>(k, N, K, n)</dt><dd><tt>Evaluates&nbsp;the&nbsp;hypergeometric&nbsp;PMF.<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;probabily&nbsp;of&nbsp;k&nbsp;successes&nbsp;in&nbsp;n&nbsp;trials&nbsp;from&nbsp;a&nbsp;population<br>
+N&nbsp;with&nbsp;K&nbsp;successes&nbsp;in&nbsp;it.</tt></dd></dl>
+ <dl><dt><a name="-EvalLognormalCdf"><strong>EvalLognormalCdf</strong></a>(x, mu<font color="#909090">=0</font>, sigma<font color="#909090">=1</font>)</dt><dd><tt>Evaluates&nbsp;the&nbsp;CDF&nbsp;of&nbsp;the&nbsp;lognormal&nbsp;distribution.<br>
+&nbsp;<br>
+x:&nbsp;float&nbsp;or&nbsp;sequence<br>
+mu:&nbsp;mean&nbsp;parameter<br>
+sigma:&nbsp;standard&nbsp;deviation&nbsp;parameter<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:&nbsp;float&nbsp;or&nbsp;sequence</tt></dd></dl>
+ <dl><dt><a name="-EvalNormalCdf"><strong>EvalNormalCdf</strong></a>(x, mu<font color="#909090">=0</font>, sigma<font color="#909090">=1</font>)</dt><dd><tt>Evaluates&nbsp;the&nbsp;CDF&nbsp;of&nbsp;the&nbsp;normal&nbsp;distribution.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;float<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mu:&nbsp;mean&nbsp;parameter<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sigma:&nbsp;standard&nbsp;deviation&nbsp;parameter<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-EvalNormalCdfInverse"><strong>EvalNormalCdfInverse</strong></a>(p, mu<font color="#909090">=0</font>, sigma<font color="#909090">=1</font>)</dt><dd><tt>Evaluates&nbsp;the&nbsp;inverse&nbsp;CDF&nbsp;of&nbsp;the&nbsp;normal&nbsp;distribution.<br>
+&nbsp;<br>
+See&nbsp;<a href="http://en.wikipedia.org/wiki/Normal_distribution#Quantile_function">http://en.wikipedia.org/wiki/Normal_distribution#Quantile_function</a>&nbsp;&nbsp;<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;p:&nbsp;float<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mu:&nbsp;mean&nbsp;parameter<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sigma:&nbsp;standard&nbsp;deviation&nbsp;parameter<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-EvalNormalPdf"><strong>EvalNormalPdf</strong></a>(x, mu, sigma)</dt><dd><tt>Computes&nbsp;the&nbsp;unnormalized&nbsp;PDF&nbsp;of&nbsp;the&nbsp;normal&nbsp;distribution.<br>
+&nbsp;<br>
+x:&nbsp;value<br>
+mu:&nbsp;mean<br>
+sigma:&nbsp;standard&nbsp;deviation<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability&nbsp;density</tt></dd></dl>
+ <dl><dt><a name="-EvalPoissonPmf"><strong>EvalPoissonPmf</strong></a>(k, lam)</dt><dd><tt>Computes&nbsp;the&nbsp;Poisson&nbsp;PMF.<br>
+&nbsp;<br>
+k:&nbsp;number&nbsp;of&nbsp;events<br>
+lam:&nbsp;parameter&nbsp;lambda&nbsp;in&nbsp;events&nbsp;per&nbsp;unit&nbsp;time<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+ <dl><dt><a name="-FitLine"><strong>FitLine</strong></a>(xs, inter, slope)</dt><dd><tt>Fits&nbsp;a&nbsp;line&nbsp;to&nbsp;the&nbsp;given&nbsp;data.<br>
+&nbsp;<br>
+xs:&nbsp;sequence&nbsp;of&nbsp;x<br>
+&nbsp;<br>
+returns:&nbsp;tuple&nbsp;of&nbsp;numpy&nbsp;arrays&nbsp;(sorted&nbsp;xs,&nbsp;fit&nbsp;ys)</tt></dd></dl>
+ <dl><dt><a name="-IQR"><strong>IQR</strong></a>(xs)</dt><dd><tt>Computes&nbsp;the&nbsp;interquartile&nbsp;of&nbsp;a&nbsp;sequence.<br>
+&nbsp;<br>
+xs:&nbsp;sequence&nbsp;or&nbsp;anything&nbsp;else&nbsp;that&nbsp;can&nbsp;initialize&nbsp;a&nbsp;<a href="#Cdf">Cdf</a><br>
+&nbsp;<br>
+returns:&nbsp;pair&nbsp;of&nbsp;floats</tt></dd></dl>
+ <dl><dt><a name="-Jitter"><strong>Jitter</strong></a>(values, jitter<font color="#909090">=0.5</font>)</dt><dd><tt>Jitters&nbsp;the&nbsp;values&nbsp;by&nbsp;adding&nbsp;a&nbsp;uniform&nbsp;variate&nbsp;in&nbsp;(-jitter,&nbsp;jitter).<br>
+&nbsp;<br>
+values:&nbsp;sequence<br>
+jitter:&nbsp;scalar&nbsp;magnitude&nbsp;of&nbsp;jitter<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;numpy&nbsp;array</tt></dd></dl>
+ <dl><dt><a name="-LeastSquares"><strong>LeastSquares</strong></a>(xs, ys)</dt><dd><tt>Computes&nbsp;a&nbsp;linear&nbsp;least&nbsp;squares&nbsp;fit&nbsp;for&nbsp;ys&nbsp;as&nbsp;a&nbsp;function&nbsp;of&nbsp;xs.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;xs:&nbsp;sequence&nbsp;of&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ys:&nbsp;sequence&nbsp;of&nbsp;values<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple&nbsp;of&nbsp;(intercept,&nbsp;slope)</tt></dd></dl>
+ <dl><dt><a name="-LogBinomialCoef"><strong>LogBinomialCoef</strong></a>(n, k)</dt><dd><tt>Computes&nbsp;the&nbsp;log&nbsp;of&nbsp;the&nbsp;binomial&nbsp;coefficient.<br>
+&nbsp;<br>
+<a href="http://math.stackexchange.com/questions/64716/">http://math.stackexchange.com/questions/64716/</a><br>
+approximating-the-logarithm-of-the-binomial-coefficient<br>
+&nbsp;<br>
+n:&nbsp;number&nbsp;of&nbsp;trials<br>
+k:&nbsp;number&nbsp;of&nbsp;successes<br>
+&nbsp;<br>
+Returns:&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-MakeCdfFromDict"><strong>MakeCdfFromDict</strong></a>(d, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;CDF&nbsp;from&nbsp;a&nbsp;dictionary&nbsp;that&nbsp;maps&nbsp;values&nbsp;to&nbsp;frequencies.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;d:&nbsp;dictionary&nbsp;that&nbsp;maps&nbsp;values&nbsp;to&nbsp;frequencies.<br>
+&nbsp;&nbsp;&nbsp;label:&nbsp;string&nbsp;label&nbsp;for&nbsp;the&nbsp;data.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Cdf">Cdf</a>&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+ <dl><dt><a name="-MakeCdfFromHist"><strong>MakeCdfFromHist</strong></a>(hist, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;CDF&nbsp;from&nbsp;a&nbsp;<a href="#Hist">Hist</a>&nbsp;<a href="__builtin__.html#object">object</a>.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;hist:&nbsp;<a href="#Pmf">Pmf</a>.<a href="#Hist">Hist</a>&nbsp;<a href="__builtin__.html#object">object</a><br>
+&nbsp;&nbsp;&nbsp;label:&nbsp;string&nbsp;label&nbsp;for&nbsp;the&nbsp;data.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Cdf">Cdf</a>&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+ <dl><dt><a name="-MakeCdfFromItems"><strong>MakeCdfFromItems</strong></a>(items, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;cdf&nbsp;from&nbsp;an&nbsp;unsorted&nbsp;sequence&nbsp;of&nbsp;(value,&nbsp;frequency)&nbsp;pairs.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;items:&nbsp;unsorted&nbsp;sequence&nbsp;of&nbsp;(value,&nbsp;frequency)&nbsp;pairs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label:&nbsp;string&nbsp;label&nbsp;for&nbsp;this&nbsp;CDF<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cdf:&nbsp;list&nbsp;of&nbsp;(value,&nbsp;fraction)&nbsp;pairs</tt></dd></dl>
+ <dl><dt><a name="-MakeCdfFromList"><strong>MakeCdfFromList</strong></a>(seq, label<font color="#909090">=None</font>)</dt><dd><tt>Creates&nbsp;a&nbsp;CDF&nbsp;from&nbsp;an&nbsp;unsorted&nbsp;sequence.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;seq:&nbsp;unsorted&nbsp;sequence&nbsp;of&nbsp;sortable&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label:&nbsp;string&nbsp;label&nbsp;for&nbsp;the&nbsp;cdf<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;<a href="#Cdf">Cdf</a>&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+ <dl><dt><a name="-MakeCdfFromPmf"><strong>MakeCdfFromPmf</strong></a>(pmf, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;CDF&nbsp;from&nbsp;a&nbsp;<a href="#Pmf">Pmf</a>&nbsp;<a href="__builtin__.html#object">object</a>.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;pmf:&nbsp;<a href="#Pmf">Pmf</a>.<a href="#Pmf">Pmf</a>&nbsp;<a href="__builtin__.html#object">object</a><br>
+&nbsp;&nbsp;&nbsp;label:&nbsp;string&nbsp;label&nbsp;for&nbsp;the&nbsp;data.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Cdf">Cdf</a>&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+ <dl><dt><a name="-MakeExponentialPmf"><strong>MakeExponentialPmf</strong></a>(lam, high, n<font color="#909090">=200</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;PMF&nbsp;discrete&nbsp;approx&nbsp;to&nbsp;an&nbsp;exponential&nbsp;distribution.<br>
+&nbsp;<br>
+lam:&nbsp;parameter&nbsp;lambda&nbsp;in&nbsp;events&nbsp;per&nbsp;unit&nbsp;time<br>
+high:&nbsp;upper&nbsp;bound<br>
+n:&nbsp;number&nbsp;of&nbsp;values&nbsp;in&nbsp;the&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;normalized&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+ <dl><dt><a name="-MakeHistFromDict"><strong>MakeHistFromDict</strong></a>(d, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;histogram&nbsp;from&nbsp;a&nbsp;map&nbsp;from&nbsp;values&nbsp;to&nbsp;frequencies.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;d:&nbsp;dictionary&nbsp;that&nbsp;maps&nbsp;values&nbsp;to&nbsp;frequencies<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label:&nbsp;string&nbsp;label&nbsp;for&nbsp;this&nbsp;histogram<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Hist">Hist</a>&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+ <dl><dt><a name="-MakeHistFromList"><strong>MakeHistFromList</strong></a>(t, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;histogram&nbsp;from&nbsp;an&nbsp;unsorted&nbsp;sequence&nbsp;of&nbsp;values.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t:&nbsp;sequence&nbsp;of&nbsp;numbers<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label:&nbsp;string&nbsp;label&nbsp;for&nbsp;this&nbsp;histogram<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Hist">Hist</a>&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+ <dl><dt><a name="-MakeJoint"><strong>MakeJoint</strong></a>(pmf1, pmf2)</dt><dd><tt><a href="#Joint">Joint</a>&nbsp;distribution&nbsp;of&nbsp;values&nbsp;from&nbsp;pmf1&nbsp;and&nbsp;pmf2.<br>
+&nbsp;<br>
+Assumes&nbsp;that&nbsp;the&nbsp;PMFs&nbsp;represent&nbsp;independent&nbsp;random&nbsp;variables.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pmf1:&nbsp;<a href="#Pmf">Pmf</a>&nbsp;<a href="__builtin__.html#object">object</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pmf2:&nbsp;<a href="#Pmf">Pmf</a>&nbsp;<a href="__builtin__.html#object">object</a><br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Joint">Joint</a>&nbsp;pmf&nbsp;of&nbsp;value&nbsp;pairs</tt></dd></dl>
+ <dl><dt><a name="-MakeMixture"><strong>MakeMixture</strong></a>(metapmf, label<font color="#909090">='mix'</font>)</dt><dd><tt>Make&nbsp;a&nbsp;mixture&nbsp;distribution.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;metapmf:&nbsp;<a href="#Pmf">Pmf</a>&nbsp;that&nbsp;maps&nbsp;from&nbsp;Pmfs&nbsp;to&nbsp;probs.<br>
+&nbsp;&nbsp;label:&nbsp;string&nbsp;label&nbsp;for&nbsp;the&nbsp;new&nbsp;<a href="#Pmf">Pmf</a>.<br>
+&nbsp;<br>
+Returns:&nbsp;<a href="#Pmf">Pmf</a>&nbsp;<a href="__builtin__.html#object">object</a>.</tt></dd></dl>
+ <dl><dt><a name="-MakeNormalPmf"><strong>MakeNormalPmf</strong></a>(mu, sigma, num_sigmas, n<font color="#909090">=201</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;PMF&nbsp;discrete&nbsp;approx&nbsp;to&nbsp;a&nbsp;Normal&nbsp;distribution.<br>
+&nbsp;<br>
+mu:&nbsp;float&nbsp;mean<br>
+sigma:&nbsp;float&nbsp;standard&nbsp;deviation<br>
+num_sigmas:&nbsp;how&nbsp;many&nbsp;sigmas&nbsp;to&nbsp;extend&nbsp;in&nbsp;each&nbsp;direction<br>
+n:&nbsp;number&nbsp;of&nbsp;values&nbsp;in&nbsp;the&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;normalized&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+ <dl><dt><a name="-MakePmfFromDict"><strong>MakePmfFromDict</strong></a>(d, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;PMF&nbsp;from&nbsp;a&nbsp;map&nbsp;from&nbsp;values&nbsp;to&nbsp;probabilities.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;d:&nbsp;dictionary&nbsp;that&nbsp;maps&nbsp;values&nbsp;to&nbsp;probabilities<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label:&nbsp;string&nbsp;label&nbsp;for&nbsp;this&nbsp;PMF<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Pmf">Pmf</a>&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+ <dl><dt><a name="-MakePmfFromHist"><strong>MakePmfFromHist</strong></a>(hist, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;normalized&nbsp;PMF&nbsp;from&nbsp;a&nbsp;<a href="#Hist">Hist</a>&nbsp;<a href="__builtin__.html#object">object</a>.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;hist:&nbsp;<a href="#Hist">Hist</a>&nbsp;<a href="__builtin__.html#object">object</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;label:&nbsp;string&nbsp;label<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Pmf">Pmf</a>&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+ <dl><dt><a name="-MakePmfFromItems"><strong>MakePmfFromItems</strong></a>(t, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;PMF&nbsp;from&nbsp;a&nbsp;sequence&nbsp;of&nbsp;value-probability&nbsp;pairs<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t:&nbsp;sequence&nbsp;of&nbsp;value-probability&nbsp;pairs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label:&nbsp;string&nbsp;label&nbsp;for&nbsp;this&nbsp;PMF<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Pmf">Pmf</a>&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+ <dl><dt><a name="-MakePmfFromList"><strong>MakePmfFromList</strong></a>(t, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;PMF&nbsp;from&nbsp;an&nbsp;unsorted&nbsp;sequence&nbsp;of&nbsp;values.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t:&nbsp;sequence&nbsp;of&nbsp;numbers<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label:&nbsp;string&nbsp;label&nbsp;for&nbsp;this&nbsp;PMF<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Pmf">Pmf</a>&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+ <dl><dt><a name="-MakePoissonPmf"><strong>MakePoissonPmf</strong></a>(lam, high, step<font color="#909090">=1</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;PMF&nbsp;discrete&nbsp;approx&nbsp;to&nbsp;a&nbsp;Poisson&nbsp;distribution.<br>
+&nbsp;<br>
+lam:&nbsp;parameter&nbsp;lambda&nbsp;in&nbsp;events&nbsp;per&nbsp;unit&nbsp;time<br>
+high:&nbsp;upper&nbsp;bound&nbsp;of&nbsp;the&nbsp;<a href="#Pmf">Pmf</a><br>
+&nbsp;<br>
+returns:&nbsp;normalized&nbsp;<a href="#Pmf">Pmf</a></tt></dd></dl>
+ <dl><dt><a name="-MakeSuiteFromDict"><strong>MakeSuiteFromDict</strong></a>(d, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;suite&nbsp;from&nbsp;a&nbsp;map&nbsp;from&nbsp;values&nbsp;to&nbsp;probabilities.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;d:&nbsp;dictionary&nbsp;that&nbsp;maps&nbsp;values&nbsp;to&nbsp;probabilities<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label:&nbsp;string&nbsp;label&nbsp;for&nbsp;this&nbsp;suite<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Suite">Suite</a>&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+ <dl><dt><a name="-MakeSuiteFromHist"><strong>MakeSuiteFromHist</strong></a>(hist, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;normalized&nbsp;suite&nbsp;from&nbsp;a&nbsp;<a href="#Hist">Hist</a>&nbsp;<a href="__builtin__.html#object">object</a>.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;hist:&nbsp;<a href="#Hist">Hist</a>&nbsp;<a href="__builtin__.html#object">object</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;label:&nbsp;string&nbsp;label<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Suite">Suite</a>&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+ <dl><dt><a name="-MakeSuiteFromList"><strong>MakeSuiteFromList</strong></a>(t, label<font color="#909090">=None</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;suite&nbsp;from&nbsp;an&nbsp;unsorted&nbsp;sequence&nbsp;of&nbsp;values.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t:&nbsp;sequence&nbsp;of&nbsp;numbers<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label:&nbsp;string&nbsp;label&nbsp;for&nbsp;this&nbsp;suite<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Suite">Suite</a>&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+ <dl><dt><a name="-MakeUniformPmf"><strong>MakeUniformPmf</strong></a>(low, high, n)</dt><dd><tt>Make&nbsp;a&nbsp;uniform&nbsp;<a href="#Pmf">Pmf</a>.<br>
+&nbsp;<br>
+low:&nbsp;lowest&nbsp;value&nbsp;(inclusive)<br>
+high:&nbsp;highest&nbsp;value&nbsp;(inclusize)<br>
+n:&nbsp;number&nbsp;of&nbsp;values</tt></dd></dl>
+ <dl><dt><a name="-MapToRanks"><strong>MapToRanks</strong></a>(t)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;ranks&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;elements&nbsp;in&nbsp;t.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t:&nbsp;sequence&nbsp;of&nbsp;numbers<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;of&nbsp;integer&nbsp;ranks,&nbsp;starting&nbsp;at&nbsp;1</tt></dd></dl>
+ <dl><dt><a name="-Mean"><strong>Mean</strong></a>(xs)</dt><dd><tt>Computes&nbsp;mean.<br>
+&nbsp;<br>
+xs:&nbsp;sequence&nbsp;of&nbsp;values<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;mean</tt></dd></dl>
+ <dl><dt><a name="-MeanVar"><strong>MeanVar</strong></a>(xs, ddof<font color="#909090">=0</font>)</dt><dd><tt>Computes&nbsp;mean&nbsp;and&nbsp;variance.<br>
+&nbsp;<br>
+Based&nbsp;on&nbsp;<a href="http://stackoverflow.com/questions/19391149/">http://stackoverflow.com/questions/19391149/</a><br>
+numpy-mean-and-variance-from-single-function<br>
+&nbsp;<br>
+xs:&nbsp;sequence&nbsp;of&nbsp;values<br>
+ddof:&nbsp;delta&nbsp;degrees&nbsp;of&nbsp;freedom<br>
+&nbsp;<br>
+returns:&nbsp;pair&nbsp;of&nbsp;float,&nbsp;mean&nbsp;and&nbsp;var</tt></dd></dl>
+ <dl><dt><a name="-Median"><strong>Median</strong></a>(xs)</dt><dd><tt>Computes&nbsp;the&nbsp;median&nbsp;(50th&nbsp;percentile)&nbsp;of&nbsp;a&nbsp;sequence.<br>
+&nbsp;<br>
+xs:&nbsp;sequence&nbsp;or&nbsp;anything&nbsp;else&nbsp;that&nbsp;can&nbsp;initialize&nbsp;a&nbsp;<a href="#Cdf">Cdf</a><br>
+&nbsp;<br>
+returns:&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-NormalProbability"><strong>NormalProbability</strong></a>(ys, jitter<font color="#909090">=0.0</font>)</dt><dd><tt>Generates&nbsp;data&nbsp;for&nbsp;a&nbsp;normal&nbsp;probability&nbsp;plot.<br>
+&nbsp;<br>
+ys:&nbsp;sequence&nbsp;of&nbsp;values<br>
+jitter:&nbsp;float&nbsp;magnitude&nbsp;of&nbsp;jitter&nbsp;added&nbsp;to&nbsp;the&nbsp;ys&nbsp;<br>
+&nbsp;<br>
+returns:&nbsp;numpy&nbsp;arrays&nbsp;xs,&nbsp;ys</tt></dd></dl>
+ <dl><dt><a name="-NormalProbabilityPlot"><strong>NormalProbabilityPlot</strong></a>(sample, label<font color="#909090">=None</font>, fit_color<font color="#909090">='0.8'</font>)</dt><dd><tt>Makes&nbsp;a&nbsp;normal&nbsp;probability&nbsp;plot&nbsp;with&nbsp;a&nbsp;fitted&nbsp;line.<br>
+&nbsp;<br>
+sample:&nbsp;sequence&nbsp;of&nbsp;numbers<br>
+label:&nbsp;string&nbsp;label&nbsp;for&nbsp;the&nbsp;data<br>
+fit_color:&nbsp;color&nbsp;string&nbsp;for&nbsp;the&nbsp;fitted&nbsp;line</tt></dd></dl>
+ <dl><dt><a name="-Odds"><strong>Odds</strong></a>(p)</dt><dd><tt>Computes&nbsp;odds&nbsp;for&nbsp;a&nbsp;given&nbsp;probability.<br>
+&nbsp;<br>
+Example:&nbsp;p=0.75&nbsp;means&nbsp;75&nbsp;for&nbsp;and&nbsp;25&nbsp;against,&nbsp;or&nbsp;3:1&nbsp;odds&nbsp;in&nbsp;favor.<br>
+&nbsp;<br>
+Note:&nbsp;when&nbsp;p=1,&nbsp;the&nbsp;formula&nbsp;for&nbsp;odds&nbsp;divides&nbsp;by&nbsp;zero,&nbsp;which&nbsp;is<br>
+normally&nbsp;undefined.&nbsp;&nbsp;But&nbsp;I&nbsp;think&nbsp;it&nbsp;is&nbsp;reasonable&nbsp;to&nbsp;define&nbsp;<a href="#-Odds">Odds</a>(1)<br>
+to&nbsp;be&nbsp;infinity,&nbsp;so&nbsp;that's&nbsp;what&nbsp;this&nbsp;function&nbsp;does.<br>
+&nbsp;<br>
+p:&nbsp;float&nbsp;0-1<br>
+&nbsp;<br>
+Returns:&nbsp;float&nbsp;odds</tt></dd></dl>
+ <dl><dt><a name="-PearsonMedianSkewness"><strong>PearsonMedianSkewness</strong></a>(xs)</dt><dd><tt>Computes&nbsp;the&nbsp;Pearson&nbsp;median&nbsp;skewness.</tt></dd></dl>
+ <dl><dt><a name="-PercentileRow"><strong>PercentileRow</strong></a>(array, p)</dt><dd><tt>Selects&nbsp;the&nbsp;row&nbsp;from&nbsp;a&nbsp;sorted&nbsp;array&nbsp;that&nbsp;maps&nbsp;to&nbsp;percentile&nbsp;p.<br>
+&nbsp;<br>
+p:&nbsp;float&nbsp;0--100<br>
+&nbsp;<br>
+returns:&nbsp;NumPy&nbsp;array&nbsp;(one&nbsp;row)</tt></dd></dl>
+ <dl><dt><a name="-PercentileRows"><strong>PercentileRows</strong></a>(ys_seq, percents)</dt><dd><tt>Selects&nbsp;rows&nbsp;from&nbsp;a&nbsp;sequence&nbsp;that&nbsp;map&nbsp;to&nbsp;percentiles.<br>
+&nbsp;<br>
+ys_seq:&nbsp;sequence&nbsp;of&nbsp;unsorted&nbsp;rows<br>
+percents:&nbsp;list&nbsp;of&nbsp;percentiles&nbsp;(0-100)&nbsp;to&nbsp;select<br>
+&nbsp;<br>
+returns:&nbsp;list&nbsp;of&nbsp;NumPy&nbsp;arrays</tt></dd></dl>
+ <dl><dt><a name="-PmfProbEqual"><strong>PmfProbEqual</strong></a>(pmf1, pmf2)</dt><dd><tt>Probability&nbsp;that&nbsp;a&nbsp;value&nbsp;from&nbsp;pmf1&nbsp;equals&nbsp;a&nbsp;value&nbsp;from&nbsp;pmf2.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pmf1:&nbsp;<a href="#Pmf">Pmf</a>&nbsp;<a href="__builtin__.html#object">object</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pmf2:&nbsp;<a href="#Pmf">Pmf</a>&nbsp;<a href="__builtin__.html#object">object</a><br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;probability</tt></dd></dl>
+ <dl><dt><a name="-PmfProbGreater"><strong>PmfProbGreater</strong></a>(pmf1, pmf2)</dt><dd><tt>Probability&nbsp;that&nbsp;a&nbsp;value&nbsp;from&nbsp;pmf1&nbsp;is&nbsp;less&nbsp;than&nbsp;a&nbsp;value&nbsp;from&nbsp;pmf2.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pmf1:&nbsp;<a href="#Pmf">Pmf</a>&nbsp;<a href="__builtin__.html#object">object</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pmf2:&nbsp;<a href="#Pmf">Pmf</a>&nbsp;<a href="__builtin__.html#object">object</a><br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;probability</tt></dd></dl>
+ <dl><dt><a name="-PmfProbLess"><strong>PmfProbLess</strong></a>(pmf1, pmf2)</dt><dd><tt>Probability&nbsp;that&nbsp;a&nbsp;value&nbsp;from&nbsp;pmf1&nbsp;is&nbsp;less&nbsp;than&nbsp;a&nbsp;value&nbsp;from&nbsp;pmf2.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pmf1:&nbsp;<a href="#Pmf">Pmf</a>&nbsp;<a href="__builtin__.html#object">object</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pmf2:&nbsp;<a href="#Pmf">Pmf</a>&nbsp;<a href="__builtin__.html#object">object</a><br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;probability</tt></dd></dl>
+ <dl><dt><a name="-Probability"><strong>Probability</strong></a>(o)</dt><dd><tt>Computes&nbsp;the&nbsp;probability&nbsp;corresponding&nbsp;to&nbsp;given&nbsp;odds.<br>
+&nbsp;<br>
+Example:&nbsp;o=2&nbsp;means&nbsp;2:1&nbsp;odds&nbsp;in&nbsp;favor,&nbsp;or&nbsp;2/3&nbsp;probability<br>
+&nbsp;<br>
+o:&nbsp;float&nbsp;odds,&nbsp;strictly&nbsp;positive<br>
+&nbsp;<br>
+Returns:&nbsp;float&nbsp;probability</tt></dd></dl>
+ <dl><dt><a name="-Probability2"><strong>Probability2</strong></a>(yes, no)</dt><dd><tt>Computes&nbsp;the&nbsp;probability&nbsp;corresponding&nbsp;to&nbsp;given&nbsp;odds.<br>
+&nbsp;<br>
+Example:&nbsp;yes=2,&nbsp;no=1&nbsp;means&nbsp;2:1&nbsp;odds&nbsp;in&nbsp;favor,&nbsp;or&nbsp;2/3&nbsp;probability.<br>
+&nbsp;<br>
+yes,&nbsp;no:&nbsp;int&nbsp;or&nbsp;float&nbsp;odds&nbsp;in&nbsp;favor</tt></dd></dl>
+ <dl><dt><a name="-RandomSeed"><strong>RandomSeed</strong></a>(x)</dt><dd><tt>Initialize&nbsp;the&nbsp;random&nbsp;and&nbsp;np.random&nbsp;generators.<br>
+&nbsp;<br>
+x:&nbsp;int&nbsp;seed</tt></dd></dl>
+ <dl><dt><a name="-RandomSum"><strong>RandomSum</strong></a>(dists)</dt><dd><tt>Chooses&nbsp;a&nbsp;random&nbsp;value&nbsp;from&nbsp;each&nbsp;dist&nbsp;and&nbsp;returns&nbsp;the&nbsp;sum.<br>
+&nbsp;<br>
+dists:&nbsp;sequence&nbsp;of&nbsp;<a href="#Pmf">Pmf</a>&nbsp;or&nbsp;<a href="#Cdf">Cdf</a>&nbsp;objects<br>
+&nbsp;<br>
+returns:&nbsp;numerical&nbsp;sum</tt></dd></dl>
+ <dl><dt><a name="-RawMoment"><strong>RawMoment</strong></a>(xs, k)</dt><dd><tt>Computes&nbsp;the&nbsp;kth&nbsp;raw&nbsp;moment&nbsp;of&nbsp;xs.</tt></dd></dl>
+ <dl><dt><a name="-ReadStataDct"><strong>ReadStataDct</strong></a>(dct_file, **options)</dt><dd><tt>Reads&nbsp;a&nbsp;Stata&nbsp;dictionary&nbsp;file.<br>
+&nbsp;<br>
+dct_file:&nbsp;string&nbsp;filename<br>
+options:&nbsp;dict&nbsp;of&nbsp;options&nbsp;passed&nbsp;to&nbsp;<a href="#-open">open</a>()<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#FixedWidthVariables">FixedWidthVariables</a>&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+ <dl><dt><a name="-RenderExpoCdf"><strong>RenderExpoCdf</strong></a>(lam, low, high, n<font color="#909090">=101</font>)</dt><dd><tt>Generates&nbsp;sequences&nbsp;of&nbsp;xs&nbsp;and&nbsp;ps&nbsp;for&nbsp;an&nbsp;exponential&nbsp;CDF.<br>
+&nbsp;<br>
+lam:&nbsp;parameter<br>
+low:&nbsp;float<br>
+high:&nbsp;float<br>
+n:&nbsp;number&nbsp;of&nbsp;points&nbsp;to&nbsp;render<br>
+&nbsp;<br>
+returns:&nbsp;numpy&nbsp;arrays&nbsp;(xs,&nbsp;ps)</tt></dd></dl>
+ <dl><dt><a name="-RenderNormalCdf"><strong>RenderNormalCdf</strong></a>(mu, sigma, low, high, n<font color="#909090">=101</font>)</dt><dd><tt>Generates&nbsp;sequences&nbsp;of&nbsp;xs&nbsp;and&nbsp;ps&nbsp;for&nbsp;a&nbsp;Normal&nbsp;CDF.<br>
+&nbsp;<br>
+mu:&nbsp;parameter<br>
+sigma:&nbsp;parameter<br>
+low:&nbsp;float<br>
+high:&nbsp;float<br>
+n:&nbsp;number&nbsp;of&nbsp;points&nbsp;to&nbsp;render<br>
+&nbsp;<br>
+returns:&nbsp;numpy&nbsp;arrays&nbsp;(xs,&nbsp;ps)</tt></dd></dl>
+ <dl><dt><a name="-RenderParetoCdf"><strong>RenderParetoCdf</strong></a>(xmin, alpha, low, high, n<font color="#909090">=50</font>)</dt><dd><tt>Generates&nbsp;sequences&nbsp;of&nbsp;xs&nbsp;and&nbsp;ps&nbsp;for&nbsp;a&nbsp;Pareto&nbsp;CDF.<br>
+&nbsp;<br>
+xmin:&nbsp;parameter<br>
+alpha:&nbsp;parameter<br>
+low:&nbsp;float<br>
+high:&nbsp;float<br>
+n:&nbsp;number&nbsp;of&nbsp;points&nbsp;to&nbsp;render<br>
+&nbsp;<br>
+returns:&nbsp;numpy&nbsp;arrays&nbsp;(xs,&nbsp;ps)</tt></dd></dl>
+ <dl><dt><a name="-Resample"><strong>Resample</strong></a>(xs, n<font color="#909090">=None</font>)</dt><dd><tt>Draw&nbsp;a&nbsp;sample&nbsp;from&nbsp;xs&nbsp;with&nbsp;the&nbsp;same&nbsp;length&nbsp;as&nbsp;xs.<br>
+&nbsp;<br>
+xs:&nbsp;sequence<br>
+n:&nbsp;sample&nbsp;size&nbsp;(default:&nbsp;len(xs))<br>
+&nbsp;<br>
+returns:&nbsp;NumPy&nbsp;array</tt></dd></dl>
+ <dl><dt><a name="-ResampleRows"><strong>ResampleRows</strong></a>(df)</dt><dd><tt>Resamples&nbsp;rows&nbsp;from&nbsp;a&nbsp;DataFrame.<br>
+&nbsp;<br>
+df:&nbsp;DataFrame<br>
+&nbsp;<br>
+returns:&nbsp;DataFrame</tt></dd></dl>
+ <dl><dt><a name="-ResampleRowsWeighted"><strong>ResampleRowsWeighted</strong></a>(df, column<font color="#909090">='finalwgt'</font>)</dt><dd><tt>Resamples&nbsp;a&nbsp;DataFrame&nbsp;using&nbsp;probabilities&nbsp;proportional&nbsp;to&nbsp;given&nbsp;column.<br>
+&nbsp;<br>
+df:&nbsp;DataFrame<br>
+column:&nbsp;string&nbsp;column&nbsp;name&nbsp;to&nbsp;use&nbsp;as&nbsp;weights<br>
+&nbsp;<br>
+returns:&nbsp;DataFrame</tt></dd></dl>
+ <dl><dt><a name="-Residuals"><strong>Residuals</strong></a>(xs, ys, inter, slope)</dt><dd><tt>Computes&nbsp;residuals&nbsp;for&nbsp;a&nbsp;linear&nbsp;fit&nbsp;with&nbsp;parameters&nbsp;inter&nbsp;and&nbsp;slope.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;xs:&nbsp;independent&nbsp;variable<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ys:&nbsp;dependent&nbsp;variable<br>
+&nbsp;&nbsp;&nbsp;&nbsp;inter:&nbsp;float&nbsp;intercept<br>
+&nbsp;&nbsp;&nbsp;&nbsp;slope:&nbsp;float&nbsp;slope<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;of&nbsp;residuals</tt></dd></dl>
+ <dl><dt><a name="-SampleRows"><strong>SampleRows</strong></a>(df, nrows, replace<font color="#909090">=False</font>)</dt><dd><tt>Choose&nbsp;a&nbsp;sample&nbsp;of&nbsp;rows&nbsp;from&nbsp;a&nbsp;DataFrame.<br>
+&nbsp;<br>
+df:&nbsp;DataFrame<br>
+nrows:&nbsp;number&nbsp;of&nbsp;rows<br>
+replace:&nbsp;whether&nbsp;to&nbsp;sample&nbsp;with&nbsp;replacement<br>
+&nbsp;<br>
+returns:&nbsp;DataDf</tt></dd></dl>
+ <dl><dt><a name="-SampleSum"><strong>SampleSum</strong></a>(dists, n)</dt><dd><tt>Draws&nbsp;a&nbsp;sample&nbsp;of&nbsp;sums&nbsp;from&nbsp;a&nbsp;list&nbsp;of&nbsp;distributions.<br>
+&nbsp;<br>
+dists:&nbsp;sequence&nbsp;of&nbsp;<a href="#Pmf">Pmf</a>&nbsp;or&nbsp;<a href="#Cdf">Cdf</a>&nbsp;objects<br>
+n:&nbsp;sample&nbsp;size<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Pmf">Pmf</a>&nbsp;of&nbsp;sums</tt></dd></dl>
+ <dl><dt><a name="-SerialCorr"><strong>SerialCorr</strong></a>(series, lag<font color="#909090">=1</font>)</dt><dd><tt>Computes&nbsp;the&nbsp;serial&nbsp;correlation&nbsp;of&nbsp;a&nbsp;series.<br>
+&nbsp;<br>
+series:&nbsp;Series<br>
+lag:&nbsp;integer&nbsp;number&nbsp;of&nbsp;intervals&nbsp;to&nbsp;shift<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;correlation</tt></dd></dl>
+ <dl><dt><a name="-Skewness"><strong>Skewness</strong></a>(xs)</dt><dd><tt>Computes&nbsp;skewness.</tt></dd></dl>
+ <dl><dt><a name="-Smooth"><strong>Smooth</strong></a>(xs, sigma<font color="#909090">=2</font>, **options)</dt><dd><tt>Smooths&nbsp;a&nbsp;NumPy&nbsp;array&nbsp;with&nbsp;a&nbsp;Gaussian&nbsp;filter.<br>
+&nbsp;<br>
+xs:&nbsp;sequence<br>
+sigma:&nbsp;standard&nbsp;deviation&nbsp;of&nbsp;the&nbsp;filter</tt></dd></dl>
+ <dl><dt><a name="-SpearmanCorr"><strong>SpearmanCorr</strong></a>(xs, ys)</dt><dd><tt>Computes&nbsp;Spearman's&nbsp;rank&nbsp;correlation.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;xs:&nbsp;sequence&nbsp;of&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ys:&nbsp;sequence&nbsp;of&nbsp;values<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;Spearman's&nbsp;correlation</tt></dd></dl>
+ <dl><dt><a name="-StandardNormalCdf"><strong>StandardNormalCdf</strong></a>(x)</dt><dd><tt>Evaluates&nbsp;the&nbsp;CDF&nbsp;of&nbsp;the&nbsp;standard&nbsp;Normal&nbsp;distribution.<br>
+&nbsp;<br>
+See&nbsp;<a href="http://en.wikipedia.org/wiki/Normal_distribution">http://en.wikipedia.org/wiki/Normal_distribution</a><br>
+#Cumulative_distribution_function<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-StandardizedMoment"><strong>StandardizedMoment</strong></a>(xs, k)</dt><dd><tt>Computes&nbsp;the&nbsp;kth&nbsp;standardized&nbsp;moment&nbsp;of&nbsp;xs.</tt></dd></dl>
+ <dl><dt><a name="-Std"><strong>Std</strong></a>(xs, mu<font color="#909090">=None</font>, ddof<font color="#909090">=0</font>)</dt><dd><tt>Computes&nbsp;standard&nbsp;deviation.<br>
+&nbsp;<br>
+xs:&nbsp;sequence&nbsp;of&nbsp;values<br>
+mu:&nbsp;option&nbsp;known&nbsp;mean<br>
+ddof:&nbsp;delta&nbsp;degrees&nbsp;of&nbsp;freedom<br>
+&nbsp;<br>
+returns:&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-Trim"><strong>Trim</strong></a>(t, p<font color="#909090">=0.01</font>)</dt><dd><tt>Trims&nbsp;the&nbsp;largest&nbsp;and&nbsp;smallest&nbsp;elements&nbsp;of&nbsp;t.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t:&nbsp;sequence&nbsp;of&nbsp;numbers<br>
+&nbsp;&nbsp;&nbsp;&nbsp;p:&nbsp;fraction&nbsp;of&nbsp;values&nbsp;to&nbsp;trim&nbsp;off&nbsp;each&nbsp;end<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sequence&nbsp;of&nbsp;values</tt></dd></dl>
+ <dl><dt><a name="-TrimmedMean"><strong>TrimmedMean</strong></a>(t, p<font color="#909090">=0.01</font>)</dt><dd><tt>Computes&nbsp;the&nbsp;trimmed&nbsp;mean&nbsp;of&nbsp;a&nbsp;sequence&nbsp;of&nbsp;numbers.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t:&nbsp;sequence&nbsp;of&nbsp;numbers<br>
+&nbsp;&nbsp;&nbsp;&nbsp;p:&nbsp;fraction&nbsp;of&nbsp;values&nbsp;to&nbsp;trim&nbsp;off&nbsp;each&nbsp;end<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-TrimmedMeanVar"><strong>TrimmedMeanVar</strong></a>(t, p<font color="#909090">=0.01</font>)</dt><dd><tt>Computes&nbsp;the&nbsp;trimmed&nbsp;mean&nbsp;and&nbsp;variance&nbsp;of&nbsp;a&nbsp;sequence&nbsp;of&nbsp;numbers.<br>
+&nbsp;<br>
+Side&nbsp;effect:&nbsp;sorts&nbsp;the&nbsp;list.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t:&nbsp;sequence&nbsp;of&nbsp;numbers<br>
+&nbsp;&nbsp;&nbsp;&nbsp;p:&nbsp;fraction&nbsp;of&nbsp;values&nbsp;to&nbsp;trim&nbsp;off&nbsp;each&nbsp;end<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-Var"><strong>Var</strong></a>(xs, mu<font color="#909090">=None</font>, ddof<font color="#909090">=0</font>)</dt><dd><tt>Computes&nbsp;variance.<br>
+&nbsp;<br>
+xs:&nbsp;sequence&nbsp;of&nbsp;values<br>
+mu:&nbsp;option&nbsp;known&nbsp;mean<br>
+ddof:&nbsp;delta&nbsp;degrees&nbsp;of&nbsp;freedom<br>
+&nbsp;<br>
+returns:&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt></dl>
+ <dl><dt><a name="-open"><strong>open</strong></a>(...)</dt><dd><tt>Open&nbsp;file&nbsp;and&nbsp;return&nbsp;a&nbsp;stream.&nbsp;&nbsp;Raise&nbsp;IOError&nbsp;upon&nbsp;failure.<br>
+&nbsp;<br>
+file&nbsp;is&nbsp;either&nbsp;a&nbsp;text&nbsp;or&nbsp;byte&nbsp;string&nbsp;giving&nbsp;the&nbsp;name&nbsp;(and&nbsp;the&nbsp;path<br>
+if&nbsp;the&nbsp;file&nbsp;isn't&nbsp;in&nbsp;the&nbsp;current&nbsp;working&nbsp;directory)&nbsp;of&nbsp;the&nbsp;file&nbsp;to<br>
+be&nbsp;opened&nbsp;or&nbsp;an&nbsp;integer&nbsp;file&nbsp;descriptor&nbsp;of&nbsp;the&nbsp;file&nbsp;to&nbsp;be<br>
+wrapped.&nbsp;(If&nbsp;a&nbsp;file&nbsp;descriptor&nbsp;is&nbsp;given,&nbsp;it&nbsp;is&nbsp;closed&nbsp;when&nbsp;the<br>
+returned&nbsp;I/O&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;is&nbsp;closed,&nbsp;unless&nbsp;closefd&nbsp;is&nbsp;set&nbsp;to&nbsp;False.)<br>
+&nbsp;<br>
+mode&nbsp;is&nbsp;an&nbsp;optional&nbsp;string&nbsp;that&nbsp;specifies&nbsp;the&nbsp;mode&nbsp;in&nbsp;which&nbsp;the&nbsp;file<br>
+is&nbsp;opened.&nbsp;It&nbsp;defaults&nbsp;to&nbsp;'r'&nbsp;which&nbsp;means&nbsp;open&nbsp;for&nbsp;reading&nbsp;in&nbsp;text<br>
+mode.&nbsp;&nbsp;Other&nbsp;common&nbsp;values&nbsp;are&nbsp;'w'&nbsp;for&nbsp;writing&nbsp;(truncating&nbsp;the&nbsp;file&nbsp;if<br>
+it&nbsp;already&nbsp;exists),&nbsp;and&nbsp;'a'&nbsp;for&nbsp;appending&nbsp;(which&nbsp;on&nbsp;some&nbsp;Unix&nbsp;systems,<br>
+means&nbsp;that&nbsp;all&nbsp;writes&nbsp;append&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;file&nbsp;regardless&nbsp;of&nbsp;the<br>
+current&nbsp;seek&nbsp;position).&nbsp;In&nbsp;text&nbsp;mode,&nbsp;if&nbsp;encoding&nbsp;is&nbsp;not&nbsp;specified&nbsp;the<br>
+encoding&nbsp;used&nbsp;is&nbsp;platform&nbsp;dependent.&nbsp;(For&nbsp;reading&nbsp;and&nbsp;writing&nbsp;raw<br>
+bytes&nbsp;use&nbsp;binary&nbsp;mode&nbsp;and&nbsp;leave&nbsp;encoding&nbsp;unspecified.)&nbsp;The&nbsp;available<br>
+modes&nbsp;are:<br>
+&nbsp;<br>
+=========&nbsp;===============================================================<br>
+Character&nbsp;Meaning<br>
+---------&nbsp;---------------------------------------------------------------<br>
+'r'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;open&nbsp;for&nbsp;reading&nbsp;(default)<br>
+'w'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;open&nbsp;for&nbsp;writing,&nbsp;truncating&nbsp;the&nbsp;file&nbsp;first<br>
+'a'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;open&nbsp;for&nbsp;writing,&nbsp;appending&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;file&nbsp;if&nbsp;it&nbsp;exists<br>
+'b'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binary&nbsp;mode<br>
+'t'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text&nbsp;mode&nbsp;(default)<br>
+'+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;open&nbsp;a&nbsp;disk&nbsp;file&nbsp;for&nbsp;updating&nbsp;(reading&nbsp;and&nbsp;writing)<br>
+'U'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;universal&nbsp;newline&nbsp;mode&nbsp;(for&nbsp;backwards&nbsp;compatibility;&nbsp;unneeded<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;new&nbsp;code)<br>
+=========&nbsp;===============================================================<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;mode&nbsp;is&nbsp;'rt'&nbsp;(open&nbsp;for&nbsp;reading&nbsp;text).&nbsp;For&nbsp;binary&nbsp;random<br>
+access,&nbsp;the&nbsp;mode&nbsp;'w+b'&nbsp;opens&nbsp;and&nbsp;truncates&nbsp;the&nbsp;file&nbsp;to&nbsp;0&nbsp;bytes,&nbsp;while<br>
+'r+b'&nbsp;opens&nbsp;the&nbsp;file&nbsp;without&nbsp;truncation.<br>
+&nbsp;<br>
+Python&nbsp;distinguishes&nbsp;between&nbsp;files&nbsp;opened&nbsp;in&nbsp;binary&nbsp;and&nbsp;text&nbsp;modes,<br>
+even&nbsp;when&nbsp;the&nbsp;underlying&nbsp;operating&nbsp;system&nbsp;doesn't.&nbsp;Files&nbsp;opened&nbsp;in<br>
+binary&nbsp;mode&nbsp;(appending&nbsp;'b'&nbsp;to&nbsp;the&nbsp;mode&nbsp;argument)&nbsp;return&nbsp;contents&nbsp;as<br>
+bytes&nbsp;objects&nbsp;without&nbsp;any&nbsp;decoding.&nbsp;In&nbsp;text&nbsp;mode&nbsp;(the&nbsp;default,&nbsp;or&nbsp;when<br>
+'t'&nbsp;is&nbsp;appended&nbsp;to&nbsp;the&nbsp;mode&nbsp;argument),&nbsp;the&nbsp;contents&nbsp;of&nbsp;the&nbsp;file&nbsp;are<br>
+returned&nbsp;as&nbsp;strings,&nbsp;the&nbsp;bytes&nbsp;having&nbsp;been&nbsp;first&nbsp;decoded&nbsp;using&nbsp;a<br>
+platform-dependent&nbsp;encoding&nbsp;or&nbsp;using&nbsp;the&nbsp;specified&nbsp;encoding&nbsp;if&nbsp;given.<br>
+&nbsp;<br>
+buffering&nbsp;is&nbsp;an&nbsp;optional&nbsp;integer&nbsp;used&nbsp;to&nbsp;set&nbsp;the&nbsp;buffering&nbsp;policy.<br>
+Pass&nbsp;0&nbsp;to&nbsp;switch&nbsp;buffering&nbsp;off&nbsp;(only&nbsp;allowed&nbsp;in&nbsp;binary&nbsp;mode),&nbsp;1&nbsp;to&nbsp;select<br>
+line&nbsp;buffering&nbsp;(only&nbsp;usable&nbsp;in&nbsp;text&nbsp;mode),&nbsp;and&nbsp;an&nbsp;integer&nbsp;&gt;&nbsp;1&nbsp;to&nbsp;indicate<br>
+the&nbsp;size&nbsp;of&nbsp;a&nbsp;fixed-size&nbsp;chunk&nbsp;buffer.&nbsp;&nbsp;When&nbsp;no&nbsp;buffering&nbsp;argument&nbsp;is<br>
+given,&nbsp;the&nbsp;default&nbsp;buffering&nbsp;policy&nbsp;works&nbsp;as&nbsp;follows:<br>
+&nbsp;<br>
+*&nbsp;Binary&nbsp;files&nbsp;are&nbsp;buffered&nbsp;in&nbsp;fixed-size&nbsp;chunks;&nbsp;the&nbsp;size&nbsp;of&nbsp;the&nbsp;buffer<br>
+&nbsp;&nbsp;is&nbsp;chosen&nbsp;using&nbsp;a&nbsp;heuristic&nbsp;trying&nbsp;to&nbsp;determine&nbsp;the&nbsp;underlying&nbsp;device's<br>
+&nbsp;&nbsp;"block&nbsp;size"&nbsp;and&nbsp;falling&nbsp;back&nbsp;on&nbsp;`io.DEFAULT_BUFFER_SIZE`.<br>
+&nbsp;&nbsp;On&nbsp;many&nbsp;systems,&nbsp;the&nbsp;buffer&nbsp;will&nbsp;typically&nbsp;be&nbsp;4096&nbsp;or&nbsp;8192&nbsp;bytes&nbsp;long.<br>
+&nbsp;<br>
+*&nbsp;"Interactive"&nbsp;text&nbsp;files&nbsp;(files&nbsp;for&nbsp;which&nbsp;isatty()&nbsp;returns&nbsp;True)<br>
+&nbsp;&nbsp;use&nbsp;line&nbsp;buffering.&nbsp;&nbsp;Other&nbsp;text&nbsp;files&nbsp;use&nbsp;the&nbsp;policy&nbsp;described&nbsp;above<br>
+&nbsp;&nbsp;for&nbsp;binary&nbsp;files.<br>
+&nbsp;<br>
+encoding&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;encoding&nbsp;used&nbsp;to&nbsp;decode&nbsp;or&nbsp;encode&nbsp;the<br>
+file.&nbsp;This&nbsp;should&nbsp;only&nbsp;be&nbsp;used&nbsp;in&nbsp;text&nbsp;mode.&nbsp;The&nbsp;default&nbsp;encoding&nbsp;is<br>
+platform&nbsp;dependent,&nbsp;but&nbsp;any&nbsp;encoding&nbsp;supported&nbsp;by&nbsp;Python&nbsp;can&nbsp;be<br>
+passed.&nbsp;&nbsp;See&nbsp;the&nbsp;codecs&nbsp;module&nbsp;for&nbsp;the&nbsp;list&nbsp;of&nbsp;supported&nbsp;encodings.<br>
+&nbsp;<br>
+errors&nbsp;is&nbsp;an&nbsp;optional&nbsp;string&nbsp;that&nbsp;specifies&nbsp;how&nbsp;encoding&nbsp;errors&nbsp;are&nbsp;to<br>
+be&nbsp;handled---this&nbsp;argument&nbsp;should&nbsp;not&nbsp;be&nbsp;used&nbsp;in&nbsp;binary&nbsp;mode.&nbsp;Pass<br>
+'strict'&nbsp;to&nbsp;raise&nbsp;a&nbsp;ValueError&nbsp;exception&nbsp;if&nbsp;there&nbsp;is&nbsp;an&nbsp;encoding&nbsp;error<br>
+(the&nbsp;default&nbsp;of&nbsp;None&nbsp;has&nbsp;the&nbsp;same&nbsp;effect),&nbsp;or&nbsp;pass&nbsp;'ignore'&nbsp;to&nbsp;ignore<br>
+errors.&nbsp;(Note&nbsp;that&nbsp;ignoring&nbsp;encoding&nbsp;errors&nbsp;can&nbsp;lead&nbsp;to&nbsp;data&nbsp;loss.)<br>
+See&nbsp;the&nbsp;documentation&nbsp;for&nbsp;codecs.register&nbsp;for&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;permitted<br>
+encoding&nbsp;error&nbsp;strings.<br>
+&nbsp;<br>
+newline&nbsp;controls&nbsp;how&nbsp;universal&nbsp;newlines&nbsp;works&nbsp;(it&nbsp;only&nbsp;applies&nbsp;to&nbsp;text<br>
+mode).&nbsp;It&nbsp;can&nbsp;be&nbsp;None,&nbsp;'',&nbsp;'\n',&nbsp;'\r',&nbsp;and&nbsp;'\r\n'.&nbsp;&nbsp;It&nbsp;works&nbsp;as<br>
+follows:<br>
+&nbsp;<br>
+*&nbsp;On&nbsp;input,&nbsp;if&nbsp;newline&nbsp;is&nbsp;None,&nbsp;universal&nbsp;newlines&nbsp;mode&nbsp;is<br>
+&nbsp;&nbsp;enabled.&nbsp;Lines&nbsp;in&nbsp;the&nbsp;input&nbsp;can&nbsp;end&nbsp;in&nbsp;'\n',&nbsp;'\r',&nbsp;or&nbsp;'\r\n',&nbsp;and<br>
+&nbsp;&nbsp;these&nbsp;are&nbsp;translated&nbsp;into&nbsp;'\n'&nbsp;before&nbsp;being&nbsp;returned&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;caller.&nbsp;If&nbsp;it&nbsp;is&nbsp;'',&nbsp;universal&nbsp;newline&nbsp;mode&nbsp;is&nbsp;enabled,&nbsp;but&nbsp;line<br>
+&nbsp;&nbsp;endings&nbsp;are&nbsp;returned&nbsp;to&nbsp;the&nbsp;caller&nbsp;untranslated.&nbsp;If&nbsp;it&nbsp;has&nbsp;any&nbsp;of<br>
+&nbsp;&nbsp;the&nbsp;other&nbsp;legal&nbsp;values,&nbsp;input&nbsp;lines&nbsp;are&nbsp;only&nbsp;terminated&nbsp;by&nbsp;the&nbsp;given<br>
+&nbsp;&nbsp;string,&nbsp;and&nbsp;the&nbsp;line&nbsp;ending&nbsp;is&nbsp;returned&nbsp;to&nbsp;the&nbsp;caller&nbsp;untranslated.<br>
+&nbsp;<br>
+*&nbsp;On&nbsp;output,&nbsp;if&nbsp;newline&nbsp;is&nbsp;None,&nbsp;any&nbsp;'\n'&nbsp;characters&nbsp;written&nbsp;are<br>
+&nbsp;&nbsp;translated&nbsp;to&nbsp;the&nbsp;system&nbsp;default&nbsp;line&nbsp;separator,&nbsp;os.linesep.&nbsp;If<br>
+&nbsp;&nbsp;newline&nbsp;is&nbsp;'',&nbsp;no&nbsp;translation&nbsp;takes&nbsp;place.&nbsp;If&nbsp;newline&nbsp;is&nbsp;any&nbsp;of&nbsp;the<br>
+&nbsp;&nbsp;other&nbsp;legal&nbsp;values,&nbsp;any&nbsp;'\n'&nbsp;characters&nbsp;written&nbsp;are&nbsp;translated&nbsp;to<br>
+&nbsp;&nbsp;the&nbsp;given&nbsp;string.<br>
+&nbsp;<br>
+If&nbsp;closefd&nbsp;is&nbsp;False,&nbsp;the&nbsp;underlying&nbsp;file&nbsp;descriptor&nbsp;will&nbsp;be&nbsp;kept&nbsp;open<br>
+when&nbsp;the&nbsp;file&nbsp;is&nbsp;closed.&nbsp;This&nbsp;does&nbsp;not&nbsp;work&nbsp;when&nbsp;a&nbsp;file&nbsp;name&nbsp;is&nbsp;given<br>
+and&nbsp;must&nbsp;be&nbsp;True&nbsp;in&nbsp;that&nbsp;case.<br>
+&nbsp;<br>
+<a href="#-open">open</a>()&nbsp;returns&nbsp;a&nbsp;file&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;whose&nbsp;type&nbsp;depends&nbsp;on&nbsp;the&nbsp;mode,&nbsp;and<br>
+through&nbsp;which&nbsp;the&nbsp;standard&nbsp;file&nbsp;operations&nbsp;such&nbsp;as&nbsp;reading&nbsp;and&nbsp;writing<br>
+are&nbsp;performed.&nbsp;When&nbsp;<a href="#-open">open</a>()&nbsp;is&nbsp;used&nbsp;to&nbsp;open&nbsp;a&nbsp;file&nbsp;in&nbsp;a&nbsp;text&nbsp;mode&nbsp;('w',<br>
+'r',&nbsp;'wt',&nbsp;'rt',&nbsp;etc.),&nbsp;it&nbsp;returns&nbsp;a&nbsp;TextIOWrapper.&nbsp;When&nbsp;used&nbsp;to&nbsp;open<br>
+a&nbsp;file&nbsp;in&nbsp;a&nbsp;binary&nbsp;mode,&nbsp;the&nbsp;returned&nbsp;class&nbsp;varies:&nbsp;in&nbsp;read&nbsp;binary<br>
+mode,&nbsp;it&nbsp;returns&nbsp;a&nbsp;BufferedReader;&nbsp;in&nbsp;write&nbsp;binary&nbsp;and&nbsp;append&nbsp;binary<br>
+modes,&nbsp;it&nbsp;returns&nbsp;a&nbsp;BufferedWriter,&nbsp;and&nbsp;in&nbsp;read/write&nbsp;mode,&nbsp;it&nbsp;returns<br>
+a&nbsp;BufferedRandom.<br>
+&nbsp;<br>
+It&nbsp;is&nbsp;also&nbsp;possible&nbsp;to&nbsp;use&nbsp;a&nbsp;string&nbsp;or&nbsp;bytearray&nbsp;as&nbsp;a&nbsp;file&nbsp;for&nbsp;both<br>
+reading&nbsp;and&nbsp;writing.&nbsp;For&nbsp;strings&nbsp;StringIO&nbsp;can&nbsp;be&nbsp;used&nbsp;like&nbsp;a&nbsp;file<br>
+opened&nbsp;in&nbsp;a&nbsp;text&nbsp;mode,&nbsp;and&nbsp;for&nbsp;bytes&nbsp;a&nbsp;BytesIO&nbsp;can&nbsp;be&nbsp;used&nbsp;like&nbsp;a&nbsp;file<br>
+opened&nbsp;in&nbsp;a&nbsp;binary&nbsp;mode.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>ROOT2</strong> = 1.4142135623730951<br>
+<strong>division</strong> = _Feature((2, 2, 0, 'alpha', 2), (3, 0, 0, 'alpha', 0), 8192)<br>
+<strong>print_function</strong> = _Feature((2, 6, 0, 'alpha', 2), (3, 0, 0, 'alpha', 0), 65536)</td></tr></table>
+</body></html>
