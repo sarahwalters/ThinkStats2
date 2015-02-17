@@ -59,5 +59,38 @@ def main(script, filename='mystery0.dat'):
     thinkplot.Show(legend=False)
 
 
+def main_ipy(filename='mystery0.dat'):
+    data = ReadFile(filename)
+    cdf = thinkstats2.MakeCdfFromList(data)
+
+    thinkplot.PrePlot(rows=2, cols=3)
+    thinkplot.SubPlot(1)
+    thinkplot.Cdf(cdf)
+    thinkplot.Config(title='linear')
+
+    thinkplot.SubPlot(2)
+    scale = thinkplot.Cdf(cdf, xscale='log')
+    thinkplot.Config(title='logx', **scale)
+
+    thinkplot.SubPlot(3)
+    scale = thinkplot.Cdf(cdf, transform='exponential')
+    thinkplot.Config(title='expo', **scale)
+
+    thinkplot.SubPlot(4)
+    xs, ys = thinkstats2.NormalProbability(data)
+    thinkplot.Plot(xs, ys)
+    thinkplot.Config(title='normal')
+
+    thinkplot.SubPlot(5)
+    scale = thinkplot.Cdf(cdf, transform='pareto')
+    thinkplot.Config(title='pareto', **scale)
+
+    thinkplot.SubPlot(6)
+    scale = thinkplot.Cdf(cdf, transform='weibull')
+    thinkplot.Config(title='weibull', **scale)
+
+    thinkplot.Show(legend=False)
+
+
 if __name__ == '__main__':
     main(*sys.argv)
